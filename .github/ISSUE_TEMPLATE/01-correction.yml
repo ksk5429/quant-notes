@@ -1,0 +1,31 @@
+name: 📝 Correction / typo / broken link
+description: Report something that's wrong on a specific page.
+labels: ["correction"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping keep the site accurate. Even a one-line "this date is wrong" is valuable.
+  - type: input
+    id: page
+    attributes:
+      label: Which page?
+      description: URL or file path. E.g. `architecture/adrs` or `docs/progress/brier-parity.md`.
+      placeholder: e.g. architecture/swarm-calibration
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: What's wrong
+      description: Paste the exact sentence (or a screenshot) and say what's incorrect.
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Correct value + source (if you have one)
+      description: A link to the authoritative source is extremely useful. Not required.
+      placeholder: "e.g. https://law.go.kr/... says the article number is 246(2), not 247"
+    validations:
+      required: false

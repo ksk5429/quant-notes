@@ -131,5 +131,8 @@ nav:
       - Self-Review Template: reviews/template.md
       - Open Questions: reviews/open-questions.md
       - 2026-04-19 Live-Hardening: reviews/2026-04-19-live-hardening.md
+  - Legal:
+      - Korean Legal Status: legal/summary.md
+  - Collaborate: collaborate.md
   - Links:
       - Related Repos: links.md

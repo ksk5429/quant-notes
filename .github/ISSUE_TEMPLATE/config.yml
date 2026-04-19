@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Discussion (questions, reviews, ideas)
+    url: https://github.com/ksk5429/quant-notes/discussions
+    about: Most first-time contributions start here. Ask questions, share reviews, propose ideas.
+  - name: 🔒 Private security / sensitive issue
+    url: https://github.com/ksk5429/quant-notes/security/advisories/new
+    about: Use this for anything involving personal data, credentials, or private research concerns.

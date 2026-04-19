@@ -1,0 +1,31 @@
+name: 🐛 Site bug (rendering / navigation / build)
+description: Something on the published site is broken.
+labels: ["site-bug"]
+body:
+  - type: input
+    id: url
+    attributes:
+      label: URL where the bug happens
+      placeholder: https://ksk5429.github.io/quant-notes/...
+    validations:
+      required: true
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      options:
+        - Chrome / Chromium
+        - Firefox
+        - Safari
+        - Edge
+        - Mobile (specify in description)
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What happens vs what you expected
+      description: Screenshot / DevTools console output if possible.
+    validations:
+      required: true

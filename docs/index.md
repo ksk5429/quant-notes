@@ -70,14 +70,26 @@ Both primary planning documents are preserved verbatim and permalinkable:
 
 ## Collaborating
 
-This site is public — if you have a GitHub account and want to suggest a
-correction or add a review, use the "Edit this page" pencil at the top-right.
-PR-based review (with `ci-pass` status-check gating) is set up on the
-[quant-notes](https://github.com/ksk5429/quant-notes) repo.
+**Start here:** [how to collaborate →](collaborate.md) — the three-lane
+model (Discussion / Issue / PR), good-first-topics, what's in scope, and
+how reviewers get credit.
 
-For deeper discussion on private trading alpha, the DMs or the
-private [kfish](https://github.com/ksk5429/kfish) repo's issue tracker are
-the places — never post private prompts or position-sizing logic here.
+Quick links:
+
+- 💬 [Open a Discussion](https://github.com/ksk5429/quant-notes/discussions)
+  (questions, ideas, reviews)
+- 🐛 [File an issue](https://github.com/ksk5429/quant-notes/issues/new/choose)
+  (correction / review-request / site-bug)
+- ✏️ Edit this page via the pencil icon at the top-right
+
+!!! warning "Korean legal status"
+    The Korean Telegram bot is blocked from live trading pending counsel
+    review. See the [legal summary](legal/summary.md) for what's pending
+    and which firms to talk to.
+
+For private trading alpha, the DMs or the private
+[kfish](https://github.com/ksk5429/kfish) repo's issue tracker are the
+places — never post prompts or position-sizing logic here.
 
 [kfish]: https://github.com/ksk5429/kfish
 [oracle]: https://github.com/ksk5429/polymarket-oracle-risk

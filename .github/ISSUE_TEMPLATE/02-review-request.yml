@@ -1,0 +1,25 @@
+name: ❓ Review question or new-topic request
+description: A specific topic you want covered, or an architecture question you'd like a written answer to.
+labels: ["review-request"]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: What question or topic do you want covered?
+      description: Be concrete. "Explain the calibration pipeline" is less useful than "Why isotonic then Venn-Abers, not the other way?"
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Why does it matter to you?
+      description: Knowing whether you're a prospective collaborator, researcher, curious reader, or potential user shapes the answer.
+    validations:
+      required: false
+  - type: textarea
+    id: anything_tried
+    attributes:
+      label: What have you already read on the site?
+      description: If a section is close but incomplete, say which one so we can expand from there.
+    validations:
+      required: false
