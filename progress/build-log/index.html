@@ -887,6 +887,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#2026-04-19-live-trading-hardening-1818-review-items-fixed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2026-04-19 — Live-trading hardening (18/18 review items fixed)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#2026-04-19-live-api-validation-brier-parity-quant-notes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1127,6 +1138,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reviews/2026-04-19-live-hardening/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026-04-19 Live-Hardening
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1248,6 +1287,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#2026-04-19-live-trading-hardening-1818-review-items-fixed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2026-04-19 — Live-trading hardening (18/18 review items fixed)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#2026-04-19-live-api-validation-brier-parity-quant-notes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1350,6 +1400,34 @@
 
 <h1 id="build-log">Build log<a class="headerlink" href="#build-log" title="Permanent link">&para;</a></h1>
 <p>Reverse-chronological entries. Each entry links the commit + a short why.</p>
+<h2 id="2026-04-19-live-trading-hardening-1818-review-items-fixed">2026-04-19 — Live-trading hardening (18/18 review items fixed)<a class="headerlink" href="#2026-04-19-live-trading-hardening-1818-review-items-fixed" title="Permanent link">&para;</a></h2>
+<p>After the live-API validation, spawned independent code + security review
+agents plus my own coverage / pyright audit. They flagged 18 issues across
+CRITICAL / HIGH / MEDIUM / LOW. Every single one is fixed — see the
+<a href="../../reviews/2026-04-19-live-hardening/">full review</a>.</p>
+<p>Headlines:</p>
+<ul>
+<li><code>/close</code>, <code>/positions</code>, <code>/balance</code> now hit the real HL info endpoint.
+  No more hardcoded 100.0 reference price, no more placeholder strings,
+  no more "order accepted" on an order that was never sent.</li>
+<li><code>HYPEKR_APP_SIGNING_SECRET</code> is now a required ≥32-char value — the silent
+  <code>"dev-only-insecure-secret"</code> fallback that would have let attackers forge
+  wallet approvals from public source is gone. 9 regression tests enforce
+  this at <code>build_app()</code> time.</li>
+<li>HKDF is now real RFC-5869 HKDF with a static domain-separation salt + per-
+  user <code>info</code> binding, not a single HMAC-SHA256 step.</li>
+<li>Mondrian conformal stratifies by true class. Per-class coverage test
+  added — passes at ≥ 0.86 for both classes on out-of-sample data.</li>
+<li>Delphi convergence checks absolute spread, not delta. No more early-exit
+  at spread=0.29 when target is 0.02.</li>
+<li><code>WalletStore</code> DuckDB connection now guarded by <code>threading.RLock</code> so
+  concurrent aiogram handlers serialize cleanly.</li>
+<li><code>pypa/gh-action-pypi-publish</code> + all publishing-path actions SHA-pinned
+  (<code>6733eb7d…</code> for v1.14.0).</li>
+<li>Raw Ethereum addresses never appear in logs — only 12-char SHA-256
+  fingerprints.</li>
+<li>Pyright: 14 errors → <strong>0 errors</strong>. Ruff: clean. Tests: <strong>140/140</strong> pass.</li>
+</ul>
 <h2 id="2026-04-19-live-api-validation-brier-parity-quant-notes">2026-04-19 — Live-API validation + Brier-parity + quant-notes<a class="headerlink" href="#2026-04-19-live-api-validation-brier-parity-quant-notes" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Probed live Polymarket Gamma + UMA Goldsky OOv2 + Managed OOv2 — all three
@@ -1425,7 +1503,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 19, 2026 03:23:54 UTC">2026-04-19</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 19, 2026 05:19:07 UTC">2026-04-19</span>
   </span>
 
     

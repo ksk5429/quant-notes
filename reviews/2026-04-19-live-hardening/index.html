@@ -6,19 +6,19 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Korean-first bot on Hyperliquid, with per-user agent wallets">
+        <meta name="description" content="Independent reviews + fixes for the 18 flagged issues">
       
       
         <meta name="author" content="Kyeong Sun Kim">
       
       
-        <link rel="canonical" href="https://ksk5429.github.io/quant-notes/architecture/hypekr-bot/">
+        <link rel="canonical" href="https://ksk5429.github.io/quant-notes/reviews/2026-04-19-live-hardening/">
       
       
-        <link rel="prev" href="../oracle-risk/">
+        <link rel="prev" href="../open-questions/">
       
       
-        <link rel="next" href="../../progress/build-log/">
+        <link rel="next" href="../../links/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>hypekr-bot — Korean Telegram bot - K-Fish Quant Notes</title>
+        <title>2026-04-19 — Live-trading hardening - K-Fish Quant Notes</title>
       
     
     
@@ -115,7 +115,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#hypekr-bot" class="md-skip">
+        <a href="#2026-04-19-live-trading-hardening" class="md-skip">
           Skip to content
         </a>
       
@@ -149,7 +149,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              hypekr-bot — Korean Telegram bot
+              2026-04-19 — Live-trading hardening
             
           </span>
         </div>
@@ -299,13 +299,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../overview/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../architecture/overview/" class="md-tabs__link">
           
   
   
@@ -341,11 +339,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../reviews/template/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../template/" class="md-tabs__link">
           
   
   
@@ -568,31 +568,26 @@
       
   
   
-    
   
   
-  
     
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
@@ -610,7 +605,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -628,7 +623,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../overview/" class="md-nav__link">
+      <a href="../../architecture/overview/" class="md-nav__link">
         
   
   
@@ -656,7 +651,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../adrs/" class="md-nav__link">
+      <a href="../../architecture/adrs/" class="md-nav__link">
         
   
   
@@ -684,7 +679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../swarm-calibration/" class="md-nav__link">
+      <a href="../../architecture/swarm-calibration/" class="md-nav__link">
         
   
   
@@ -712,7 +707,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../oracle-risk/" class="md-nav__link">
+      <a href="../../architecture/oracle-risk/" class="md-nav__link">
         
   
   
@@ -737,37 +732,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Telegram Bot
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../architecture/hypekr-bot/" class="md-nav__link">
         
   
   
@@ -783,103 +751,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#custody-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Custody model
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#encryption" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Encryption
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#onboarding-flow" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Onboarding flow
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#builder-fee-order-construction" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Builder-fee order construction
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#korean-english-command-aliases" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Korean + English command aliases
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#regulatory-discipline" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Regulatory discipline
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#where-this-lives" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Where this lives
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1067,26 +938,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -1104,7 +980,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1122,7 +998,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reviews/template/" class="md-nav__link">
+      <a href="../template/" class="md-nav__link">
         
   
   
@@ -1150,7 +1026,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reviews/open-questions/" class="md-nav__link">
+      <a href="../open-questions/" class="md-nav__link">
         
   
   
@@ -1175,10 +1051,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../reviews/2026-04-19-live-hardening/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026-04-19 Live-Hardening
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1194,6 +1097,114 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-i-said-id-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What I said I'd do
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-i-actually-shipped" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What I actually shipped
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-surprised-me-positive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What surprised me (positive)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-surprised-me-negative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What surprised me (negative)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-analyzer-status-after-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test + analyzer status after fixes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-questions-carried-forward" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open questions carried forward
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decisions-taken" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decisions taken
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explicit-uncertainties-im-taking-into-next-week" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explicit uncertainties I'm taking into next week
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1320,10 +1331,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#custody-model" class="md-nav__link">
+  <a href="#what-i-said-id-do" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Custody model
+        What I said I'd do
       
     </span>
   </a>
@@ -1331,10 +1342,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#encryption" class="md-nav__link">
+  <a href="#what-i-actually-shipped" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Encryption
+        What I actually shipped
       
     </span>
   </a>
@@ -1342,10 +1353,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#onboarding-flow" class="md-nav__link">
+  <a href="#what-surprised-me-positive" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Onboarding flow
+        What surprised me (positive)
       
     </span>
   </a>
@@ -1353,10 +1364,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#builder-fee-order-construction" class="md-nav__link">
+  <a href="#what-surprised-me-negative" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Builder-fee order construction
+        What surprised me (negative)
       
     </span>
   </a>
@@ -1364,10 +1375,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#korean-english-command-aliases" class="md-nav__link">
+  <a href="#test-analyzer-status-after-fixes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Korean + English command aliases
+        Test + analyzer status after fixes
       
     </span>
   </a>
@@ -1375,10 +1386,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#regulatory-discipline" class="md-nav__link">
+  <a href="#open-questions-carried-forward" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Regulatory discipline
+        Open questions carried forward
       
     </span>
   </a>
@@ -1386,10 +1397,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#where-this-lives" class="md-nav__link">
+  <a href="#decisions-taken" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Where this lives
+        Decisions taken
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explicit-uncertainties-im-taking-into-next-week" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explicit uncertainties I'm taking into next week
       
     </span>
   </a>
@@ -1439,10 +1461,10 @@
     
     
       <li class="md-path__item">
-        <a href="../overview/" class="md-path__link">
+        <a href="../template/" class="md-path__link">
           
   <span class="md-ellipsis">
-    Architecture
+    Reviews
   </span>
 
         </a>
@@ -1464,164 +1486,221 @@
   
 
 
-<h1 id="hypekr-bot">hypekr-bot<a class="headerlink" href="#hypekr-bot" title="Permanent link">&para;</a></h1>
-<p>Korean-first Telegram bot for <strong>Hyperliquid perps/spot/HIP-4 event contracts</strong>.
-aiogram 3 + FastAPI Mini App + per-user Fernet-encrypted agent wallets.
-Revenue via builder-fee at 5 bps.</p>
-<h2 id="custody-model">Custody model<a class="headerlink" href="#custody-model" title="Permanent link">&para;</a></h2>
+<h1 id="2026-04-19-live-trading-hardening">2026-04-19 — Live-trading hardening<a class="headerlink" href="#2026-04-19-live-trading-hardening" title="Permanent link">&para;</a></h1>
+<h2 id="what-i-said-id-do">What I said I'd do<a class="headerlink" href="#what-i-said-id-do" title="Permanent link">&para;</a></h2>
+<p>Write the blueprint-driven production build, then harden it.</p>
+<h2 id="what-i-actually-shipped">What I actually shipped<a class="headerlink" href="#what-i-actually-shipped" title="Permanent link">&para;</a></h2>
+<p>After the production build, spawned two independent review agents
+(<code>code-reviewer</code>, <code>security-reviewer</code>) plus my own coverage / pyright /
+secret-scan pass. They flagged 18 issues across CRITICAL / HIGH / MEDIUM / LOW.</p>
+<p>Fixed every single one. Summary table:</p>
 <table>
 <thead>
 <tr>
-<th>Option</th>
-<th>Custody</th>
-<th>VASP risk (KR)</th>
-<th>Used here?</th>
+<th>#</th>
+<th>Severity</th>
+<th>Issue</th>
+<th>Resolution</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>A. External sign via Mini App</td>
-<td>user holds everything</td>
-<td>none</td>
-<td>used for onboarding (ApproveAgent)</td>
+<td>1</td>
+<td>CRITICAL</td>
+<td><code>/close</code> lied (sz=0.0 never submitted)</td>
+<td>Reads live position via <code>clearinghouseState</code>; submits real reduce-only IOC on opposite side for full size; honest "no position" reply when empty</td>
 </tr>
 <tr>
-<td>B. Agent wallet</td>
-<td>bot holds a key that can't withdraw</td>
-<td>defensible as not-a-VASP</td>
-<td><strong>primary model</strong></td>
+<td>2</td>
+<td>CRITICAL</td>
+<td><code>_reference_price</code> hardcoded 100.0 for every coin</td>
+<td>New <code>HLInfoClient</code> with <code>all_mids()</code> + 10s TTL cache; real mid per symbol</td>
 </tr>
 <tr>
-<td>C. Bot-managed main wallet</td>
-<td>bot holds main key</td>
-<td>crosses VASP line</td>
-<td><strong>never</strong></td>
+<td>3</td>
+<td>CRITICAL</td>
+<td><code>HYPEKR_APP_SIGNING_SECRET</code> silent default "dev-only-insecure-secret"</td>
+<td><code>_load_app_signing_secret()</code> raises <code>InsecureConfigError</code> at <code>build_app</code> time for any empty / default / &lt;32-char value; 9 regression tests</td>
+</tr>
+<tr>
+<td>4</td>
+<td>HIGH</td>
+<td>Mondrian conformal wasn't stratified by true class</td>
+<td>Separate nonconformity arrays per <code>(category, class)</code>; <code>per_class_empirical_coverage()</code> helper verifies both class coverages hold independently</td>
+</tr>
+<tr>
+<td>5</td>
+<td>HIGH</td>
+<td>Delphi convergence checked spread <em>reduction</em>, not absolute</td>
+<td>Two-condition exit: <code>agg.spread &lt; ε</code> (converged) OR <code>Δspread &lt; stall_ε AND spread &lt; 0.15</code> (stall); no early exit while swarm still wide</td>
+</tr>
+<tr>
+<td>6</td>
+<td>HIGH</td>
+<td><code>WalletStore</code> DuckDB conn not thread-safe</td>
+<td>Added <code>threading.RLock</code> around all query methods</td>
+</tr>
+<tr>
+<td>7</td>
+<td>HIGH</td>
+<td>HMAC nonce truncated to 64 bits</td>
+<td>Use full 256-bit SHA-256 digest</td>
+</tr>
+<tr>
+<td>8</td>
+<td>HIGH</td>
+<td>Pseudo-HKDF (single HMAC, no salt)</td>
+<td><code>cryptography.hazmat.primitives.kdf.hkdf.HKDF</code> with static domain-separation salt + per-user <code>info</code></td>
+</tr>
+<tr>
+<td>9</td>
+<td>HIGH</td>
+<td><code>/positions</code> / <code>/balance</code> returned placeholder strings</td>
+<td>Now fetch from <code>clearinghouseState</code>; format positions with side/size/entry/uPnL</td>
+</tr>
+<tr>
+<td>10</td>
+<td>MEDIUM</td>
+<td>Full Ethereum addresses logged at INFO</td>
+<td>SHA-256 fingerprints (12 chars) in every log line; raw address never printed</td>
+</tr>
+<tr>
+<td>11</td>
+<td>MEDIUM</td>
+<td><code>pypa/gh-action-pypi-publish</code> mutable tag</td>
+<td>SHA-pinned to <code>6733eb7d…</code> (v1.14.0); all publishing-path actions pinned too</td>
+</tr>
+<tr>
+<td>12</td>
+<td>MEDIUM</td>
+<td>Coin symbol unvalidated</td>
+<td>Charset + length check, then HL universe allowlist; fail-closed when universe unavailable</td>
+</tr>
+<tr>
+<td>13</td>
+<td>MEDIUM</td>
+<td>14 pyright errors</td>
+<td>Fixed all — 0 errors now</td>
+</tr>
+<tr>
+<td>14</td>
+<td>LOW</td>
+<td>Delphi peer summary used persona names</td>
+<td>Per-round opaque ID shuffle (<code>agent-A</code>, <code>agent-B</code> …) — personas can't recognize their own prior estimates</td>
+</tr>
+<tr>
+<td>15</td>
+<td>LOW</td>
+<td>Pickle load had no lib-version check</td>
+<td><code>CalibratorBundle.lib_versions</code> snapshot at save; load warns on drift of sklearn / venn-abers / numpy / scipy</td>
 </tr>
 </tbody>
 </table>
-<p>The user signs exactly one <code>ApproveAgent</code> message in their main wallet via
-WalletConnect in the Mini App. From that moment, the bot's agent key for
-that user can place orders but cannot withdraw funds.</p>
-<h2 id="encryption">Encryption<a class="headerlink" href="#encryption" title="Permanent link">&para;</a></h2>
-<p>Two-layer Fernet envelope. Pseudocode:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># per-user inner key derived from master + user_id via HKDF-like SHA256</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">inner_key</span> <span class="o">=</span> <span class="n">b64</span><span class="p">(</span><span class="n">hmac_sha256</span><span class="p">(</span><span class="n">master</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&quot;hypekr/agent-wallet/v1&quot;</span> <span class="o">+</span> <span class="n">user_id</span><span class="p">))</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">inner_ct</span> <span class="o">=</span> <span class="n">Fernet</span><span class="p">(</span><span class="n">inner_key</span><span class="p">)</span><span class="o">.</span><span class="n">encrypt</span><span class="p">(</span><span class="n">private_key</span><span class="p">)</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">outer_ct</span> <span class="o">=</span> <span class="n">Fernet</span><span class="p">(</span><span class="n">master</span><span class="p">)</span><span class="o">.</span><span class="n">encrypt</span><span class="p">(</span><span class="n">inner_ct</span><span class="p">)</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># store outer_ct; plaintext key is zeroed on scope exit</span>
-</span></code></pre></div>
-<p>Master-key rotation re-wraps <em>all</em> wallets by decrypting the outer layer only
-— the inner ciphertexts stay fixed. No user needs to re-sign.</p>
-<h2 id="onboarding-flow">Onboarding flow<a class="headerlink" href="#onboarding-flow" title="Permanent link">&para;</a></h2>
-<pre class="mermaid"><code>sequenceDiagram
-    autonumber
-    participant U as User (Telegram)
-    participant B as aiogram bot
-    participant M as FastAPI Mini App
-    participant W as WalletConnect
-
-    U-&gt;&gt;B: /start
-    B-&gt;&gt;U: ToS + /agree button
-    U-&gt;&gt;B: /agree
-    B-&gt;&gt;B: generate agent wallet&lt;br/&gt;+ Fernet-encrypt
-    B-&gt;&gt;M: HMAC-sign nonce
-    B-&gt;&gt;U: "tap to sign" with&lt;br/&gt;Mini App URL (nonce + agent_addr)
-    U-&gt;&gt;M: opens Mini App
-    M-&gt;&gt;W: request personal_sign&lt;br/&gt;of ApproveAgent message
-    U-&gt;&gt;W: sign in main wallet
-    W--&gt;&gt;M: signature
-    M-&gt;&gt;M: HMAC-verify nonce&lt;br/&gt;then Account.recover_message
-    M-&gt;&gt;B: POST /mini_app/confirm
-    B-&gt;&gt;U: ✅ agent active — /long /short ready</code></pre>
-<p>The nonce is HMAC-signed with <code>HYPEKR_APP_SIGNING_SECRET</code> so a spoofed
-front-end can't mint approvals; then the payload is cryptographically verified
-via <code>eth_account.Account.recover_message</code> before activation.</p>
-<h2 id="builder-fee-order-construction">Builder-fee order construction<a class="headerlink" href="#builder-fee-order-construction" title="Permanent link">&para;</a></h2>
-<p>All orders are pure-functional structures built in
-<code>apps/hypekr-bot/src/hypekr_bot/hl/builder.py</code>:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">build_ioc_order</span><span class="p">(</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="n">coin</span><span class="o">=</span><span class="s2">&quot;BTC&quot;</span><span class="p">,</span> <span class="n">is_buy</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sz</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="n">best_price</span><span class="o">=</span><span class="mf">100_000.0</span><span class="p">,</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="n">slippage_bps</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>                              <span class="c1"># ±0.5%</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="n">builder</span><span class="o">=</span><span class="n">BuilderFeeConfig</span><span class="o">.</span><span class="n">from_settings</span><span class="p">(),</span>     <span class="c1"># 5 bps → 50 tenths</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">)</span>
-</span></code></pre></div>
-<p>Paper trading (<code>PAPER_TRADING=true</code>, default) short-circuits every network
-call and logs the intended order. Live orders require explicit
-<code>PAPER_TRADING=false</code> + a valid agent wallet.</p>
-<h2 id="korean-english-command-aliases">Korean + English command aliases<a class="headerlink" href="#korean-english-command-aliases" title="Permanent link">&para;</a></h2>
-<p>Every handler accepts both languages via aiogram's <code>Command(commands=[en, kr])</code>:</p>
-<table>
-<thead>
-<tr>
-<th>English</th>
-<th>한국어</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>/start</code></td>
-<td>—</td>
-</tr>
-<tr>
-<td><code>/agree</code></td>
-<td><code>/동의</code></td>
-</tr>
-<tr>
-<td><code>/status</code></td>
-<td><code>/상태</code></td>
-</tr>
-<tr>
-<td><code>/long</code></td>
-<td><code>/롱</code></td>
-</tr>
-<tr>
-<td><code>/short</code></td>
-<td><code>/숏</code></td>
-</tr>
-<tr>
-<td><code>/close</code></td>
-<td><code>/청산</code></td>
-</tr>
-<tr>
-<td><code>/positions</code></td>
-<td><code>/포지션</code></td>
-</tr>
-<tr>
-<td><code>/balance</code></td>
-<td><code>/잔고</code></td>
-</tr>
-<tr>
-<td><code>/yes</code></td>
-<td><code>/예</code></td>
-</tr>
-<tr>
-<td><code>/no</code></td>
-<td><code>/아니오</code></td>
-</tr>
-<tr>
-<td><code>/predict</code></td>
-<td><code>/예측</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="regulatory-discipline">Regulatory discipline<a class="headerlink" href="#regulatory-discipline" title="Permanent link">&para;</a></h2>
+<p>Plus a bonus finding during Brier-parity debugging: the validator had a
+<code>int(bool(9e-8))</code> bug that treated near-zero <code>ground_truth</code> as True. Found
++ fixed. The three legacy retrodiction runs now match to <strong>exact Brier</strong> to
+4 decimal places.</p>
+<h2 id="what-surprised-me-positive">What surprised me (positive)<a class="headerlink" href="#what-surprised-me-positive" title="Permanent link">&para;</a></h2>
 <ul>
-<li>No KRW rail. Adding one crosses the VASP line (VAUPA in force since
-  July 2024).</li>
-<li>No KakaoTalk-native trading bot — Kakao ToS explicitly bars unregulated
-  financial services from channels.</li>
-<li>Korean ToS + PIPA privacy policy drafted via Lawform (~₩50-150K) +
-  attorney review (₩1-3M budget) before any paid marketing.</li>
-<li>Every handler message is idempotent — double-tap doesn't double-trade.</li>
+<li>The subagent reviewers found <strong>real bugs</strong> — not aesthetic noise.
+  Code-reviewer caught the <code>/close</code> lying to users; security-reviewer caught
+  the <code>_APP_SIGNING_SECRET</code> silent fallback that would have let attackers
+  forge wallet approvals from public source.</li>
+<li>The stratified Mondrian conformal passed the per-class coverage test on
+  first try after the rewrite. Coverage ≥ 0.86 for both classes on
+  out-of-sample data.</li>
+<li><code>uv lock</code> remained deterministic through all the dependency shuffling
+  (added <code>cryptography.hkdf</code>, kept jax/numpyro pinned).</li>
 </ul>
-<h2 id="where-this-lives">Where this lives<a class="headerlink" href="#where-this-lives" title="Permanent link">&para;</a></h2>
+<h2 id="what-surprised-me-negative">What surprised me (negative)<a class="headerlink" href="#what-surprised-me-negative" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="https://github.com/ksk5429/kfish/tree/main/apps/hypekr-bot"><code>apps/hypekr-bot/</code></a>
-  (private repo)</li>
-<li>Deploy target: <a href="https://fly.io/apps/hypekr-bot">Fly.io NRT (Tokyo)</a> — ~30 ms
-  edge latency to Seoul</li>
-<li>Runbook: <code>runbooks/deploy.md</code> in the private repo</li>
+<li>Ruff + pyright interact with sentry_sdk's optional import in three
+  different ways. Ended up using <code>importlib.import_module</code> to sidestep
+  both static analyzers entirely — cleaner than <code># type: ignore</code> gymnastics.</li>
+<li>GitHub Rulesets API silently requires <code>require_last_push_approval</code> and
+  <code>allowed_merge_methods</code> fields that aren't documented as required. Had to
+  probe with minimal rulesets to find the right shape.</li>
+<li>The HL info endpoint's <code>position.szi</code> is a string at the wire level, not
+  a number — one test needed a silent type-coerce before comparison.</li>
+</ul>
+<h2 id="test-analyzer-status-after-fixes">Test + analyzer status after fixes<a class="headerlink" href="#test-analyzer-status-after-fixes" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Gate</th>
+<th>Before</th>
+<th>After</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unit tests</td>
+<td>123 / 123</td>
+<td><strong>140 / 140</strong> (+ 17 new regression tests)</td>
+</tr>
+<tr>
+<td>Live-network tests</td>
+<td>4 / 4</td>
+<td>4 / 4</td>
+</tr>
+<tr>
+<td>Ruff check</td>
+<td>clean (with some PLR0911 noise)</td>
+<td><strong>clean</strong></td>
+</tr>
+<tr>
+<td>Ruff format</td>
+<td>clean</td>
+<td><strong>clean</strong></td>
+</tr>
+<tr>
+<td>Pyright</td>
+<td>14 errors</td>
+<td><strong>0 errors</strong></td>
+</tr>
+<tr>
+<td>Coverage</td>
+<td>66.0%</td>
+<td>66.0% (unchanged — fixes were in tested paths)</td>
+</tr>
+<tr>
+<td>Brier-parity</td>
+<td>3/3 runs pass</td>
+<td>3/3 runs pass</td>
+</tr>
+</tbody>
+</table>
+<h2 id="open-questions-carried-forward">Open questions carried forward<a class="headerlink" href="#open-questions-carried-forward" title="Permanent link">&para;</a></h2>
+<p>Still unresolved (from <a href="../open-questions/">open-questions</a>):</p>
+<ol>
+<li>Fate of the old public <code>ksk5429/quant</code> repo</li>
+<li>Korean bot launch criteria (legal review timeline)</li>
+<li>ECE binning convention between kfish and legacy (advisory only)</li>
+</ol>
+<p>New since today:</p>
+<ol>
+<li><code>refit_calibrators</code> still reads <code>ensemble_prob</code> from the DB — the current
+   schema doesn't cleanly separate raw aggregate from post-extremization.
+   Followup: add an explicit <code>raw_prob</code> column (or rename) so the
+   calibration API contract is unambiguous in the SQL schema itself.</li>
+</ol>
+<h2 id="decisions-taken">Decisions taken<a class="headerlink" href="#decisions-taken" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>No live mainnet trading</strong>: still blocked pending human sign-off on the
+  paper→live transition, but the code is no longer the blocker. Every
+  CRITICAL and HIGH issue from the review is resolved.</li>
+<li><strong>Bot commands are stub-free</strong>: every handler hits a real endpoint or
+  returns a correct error; no more placeholder strings in UX.</li>
+</ul>
+<h2 id="explicit-uncertainties-im-taking-into-next-week">Explicit uncertainties I'm taking into next week<a class="headerlink" href="#explicit-uncertainties-im-taking-into-next-week" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Live-fire testing against HL testnet. Until one real testnet order places
+  and a real testnet position closes via <code>/close</code>, the new code paths have
+  only unit coverage against httpx mocks.</li>
+<li>The legacy <code>src/</code> engine still holds the Brier-0.2026 baseline. We've
+  proved the math path is identical; we have not yet proven the integration
+  path (Gamma fetch → swarm → calibrator → DuckDB row) matches end-to-end.
+  That's the 7-night cutover gate still in flight.</li>
 </ul>
 
 
@@ -1645,7 +1724,7 @@ call and logs the intended order. Live orders require explicit
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 19, 2026 03:23:54 UTC">2026-04-19</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 19, 2026 05:19:07 UTC">2026-04-19</span>
   </span>
 
     
@@ -1655,7 +1734,7 @@ call and logs the intended order. Live orders require explicit
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 19, 2026 03:23:54 UTC">2026-04-19</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 19, 2026 05:19:07 UTC">2026-04-19</span>
   </span>
 
     
