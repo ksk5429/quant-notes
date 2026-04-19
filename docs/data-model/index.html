@@ -6,19 +6,19 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Structure for end-of-week reviews and collaborator walkthroughs">
+        <meta name="description" content="DuckDB schema, ASOF joins, migration policy">
       
       
         <meta name="author" content="Kyeong Sun Kim">
       
       
-        <link rel="canonical" href="https://ksk5429.github.io/quant-notes/reviews/template/">
+        <link rel="canonical" href="https://ksk5429.github.io/quant-notes/docs/data-model/">
       
       
-        <link rel="prev" href="../../progress/hip4-watch/">
+        <link rel="prev" href="../news/">
       
       
-        <link rel="next" href="../open-questions/">
+        <link rel="next" href="../operations/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>Self-review template - K-Fish Quant Notes</title>
+        <title>Data Model - K-Fish Quant Notes</title>
       
     
     
@@ -115,7 +115,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#self-review-template" class="md-skip">
+        <a href="#data-model" class="md-skip">
           Skip to content
         </a>
       
@@ -149,7 +149,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Self-review template
+              Data Model
             
           </span>
         </div>
@@ -279,11 +279,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../docs/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
   
@@ -359,13 +361,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../reviews/template/" class="md-tabs__link">
           
   
   
@@ -512,26 +512,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -549,7 +554,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -567,7 +572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -595,7 +600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/getting-started/" class="md-nav__link">
+      <a href="../getting-started/" class="md-nav__link">
         
   
   
@@ -623,7 +628,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/theory/" class="md-nav__link">
+      <a href="../theory/" class="md-nav__link">
         
   
   
@@ -651,7 +656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/swarm/" class="md-nav__link">
+      <a href="../swarm/" class="md-nav__link">
         
   
   
@@ -679,7 +684,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/calibration/" class="md-nav__link">
+      <a href="../calibration/" class="md-nav__link">
         
   
   
@@ -707,7 +712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/news/" class="md-nav__link">
+      <a href="../news/" class="md-nav__link">
         
   
   
@@ -732,10 +737,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../docs/data-model/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Model
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -751,6 +783,186 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#core-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core tables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core tables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kfishvenues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kfish.venues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kfishmarkets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kfish.markets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kfishprices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kfish.prices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kfishdecisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kfish.decisions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kfishagent_outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kfish.agent_outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kfishoutcomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kfish.outcomes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kfisharticles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kfish.articles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kfishoracle_events-and-kfishrisk_scores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kfish.oracle_events and kfish.risk_scores
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kfishcalibration_rows-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kfish.calibration_rows (view)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asof-joins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ASOF joins
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#migrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migrations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timezone-discipline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timezone discipline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -763,7 +975,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/operations/" class="md-nav__link">
+      <a href="../operations/" class="md-nav__link">
         
   
   
@@ -791,7 +1003,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/validation/" class="md-nav__link">
+      <a href="../validation/" class="md-nav__link">
         
   
   
@@ -819,7 +1031,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/prompt-engineering/" class="md-nav__link">
+      <a href="../prompt-engineering/" class="md-nav__link">
         
   
   
@@ -847,7 +1059,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/glossary/" class="md-nav__link">
+      <a href="../glossary/" class="md-nav__link">
         
   
   
@@ -875,7 +1087,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/references/" class="md-nav__link">
+      <a href="../references/" class="md-nav__link">
         
   
   
@@ -1420,31 +1632,26 @@
       
   
   
-    
   
   
-  
     
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   
@@ -1462,7 +1669,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1477,37 +1684,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Self-Review Template
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../reviews/template/" class="md-nav__link">
         
   
   
@@ -1523,37 +1703,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#why-the-template-matters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why the template matters
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1566,7 +1715,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../open-questions/" class="md-nav__link">
+      <a href="../../reviews/open-questions/" class="md-nav__link">
         
   
   
@@ -1594,7 +1743,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2026-04-19-live-hardening/" class="md-nav__link">
+      <a href="../../reviews/2026-04-19-live-hardening/" class="md-nav__link">
         
   
   
@@ -1850,10 +1999,159 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#why-the-template-matters" class="md-nav__link">
+  <a href="#core-tables" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why the template matters
+        Core tables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core tables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kfishvenues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kfish.venues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kfishmarkets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kfish.markets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kfishprices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kfish.prices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kfishdecisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kfish.decisions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kfishagent_outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kfish.agent_outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kfishoutcomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kfish.outcomes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kfisharticles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kfish.articles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kfishoracle_events-and-kfishrisk_scores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kfish.oracle_events and kfish.risk_scores
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kfishcalibration_rows-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kfish.calibration_rows (view)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asof-joins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ASOF joins
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#migrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migrations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timezone-discipline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timezone discipline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related
       
     </span>
   </a>
@@ -1903,10 +2201,10 @@
     
     
       <li class="md-path__item">
-        <a href="./" class="md-path__link">
+        <a href="../" class="md-path__link">
           
   <span class="md-ellipsis">
-    Reviews
+    Docs
   </span>
 
         </a>
@@ -1928,54 +2226,162 @@
   
 
 
-<h1 id="self-review-template">Self-review template<a class="headerlink" href="#self-review-template" title="Permanent link">&para;</a></h1>
-<p>Copy this template into a new page under <code>docs/reviews/YYYY-MM-DD-topic.md</code>
-each week, or when a discrete milestone lands. Keep the tone
-brutally-honest-with-self; polish lives in the build log.</p>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gh"># YYYY-MM-DD — &lt;topic&gt;</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="gu">## What I said I&#39;d do</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">- [ ]</span> item A
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">- [ ]</span> item B
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="gu">## What I actually shipped</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="k">-</span><span class="w"> </span>commit / PR links
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="k">-</span><span class="w"> </span>metrics if applicable (Brier, coverage, test count)
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="gu">## What I didn&#39;t ship and why</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="k">-</span><span class="w"> </span>item C — blocked on X
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="k">-</span><span class="w"> </span>item D — descoped because Y
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="gu">## What surprised me (positive)</span>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="k">-</span><span class="w"> </span>…
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="gu">## What surprised me (negative)</span>
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="k">-</span><span class="w"> </span>…
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>
-</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="gu">## Open questions for next week</span>
-</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>
-</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="k">-</span><span class="w"> </span>…
-</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>
-</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="gu">## Decisions taken</span>
-</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>
-</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="k">-</span><span class="w"> </span>If any architectural or risk-profile decision was made, link to the ADR
-</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>  (add a new one if needed — <span class="sb">`docs/decisions/NNNN-*.md`</span> in the private repo).
-</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>
-</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="gu">## Explicit uncertainties I&#39;m taking into next week</span>
-</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>
-</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="k">-</span><span class="w"> </span>…
+<h1 id="data-model">Data model<a class="headerlink" href="#data-model" title="Permanent link">&para;</a></h1>
+<p>K-Fish uses <strong>DuckDB</strong> as the single source of truth. Every forecast, price,
+news item, and oracle event joins on the same UTC timeline. ADR-0002
+rationalizes the choice.</p>
+<div class="admonition note">
+<p class="admonition-title">One file, one schema</p>
+<p>The warehouse is a single DuckDB file at <code>data/warehouse/kfish.duckdb</code>.
+The DuckDB schema <code>kfish</code> holds every domain table; <code>main</code> stays empty
+so imports/exports don't collide with the application namespace.</p>
+</div>
+<h2 id="core-tables">Core tables<a class="headerlink" href="#core-tables" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>erDiagram
+    venues ||--o{ markets : hosts
+    markets ||--o{ prices : "has time series"
+    markets ||--o{ decisions : "evaluated by"
+    markets ||--o| outcomes : "resolves to"
+    decisions ||--o{ agent_outputs : "composed of"
+    markets ||--o{ oracle_events : "has UMA events"
+    markets ||--o{ risk_scores : "scored by"</code></pre>
+<h3 id="kfishvenues"><code>kfish.venues</code><a class="headerlink" href="#kfishvenues" title="Permanent link">&para;</a></h3>
+<p>Registry of trading venues. Seeded with <code>polymarket</code>, <code>kalshi</code>,
+<code>hyperliquid</code>. Columns: <code>venue_id</code> (PK), <code>display_name</code>, <code>base_url</code>,
+<code>fee_bps</code>, <code>created_at</code>.</p>
+<h3 id="kfishmarkets"><code>kfish.markets</code><a class="headerlink" href="#kfishmarkets" title="Permanent link">&para;</a></h3>
+<p>One row per market, uniquely keyed by <code>(venue_id, native_id)</code>. Carries
+<code>question</code>, <code>category</code>, <code>opened_at</code>, <code>closes_at</code>, <code>resolved_at</code>,
+<code>resolution_value</code>, and a <code>meta JSON</code> blob for venue-specific fields.</p>
+<h3 id="kfishprices"><code>kfish.prices</code><a class="headerlink" href="#kfishprices" title="Permanent link">&para;</a></h3>
+<p>Time series of <code>(market_id, ts, outcome, price)</code>. Indexed on
+<code>(market_id, ts)</code> for range scans and ASOF joins. Also carries
+<code>best_bid</code>/<code>best_ask</code>/<code>volume_24h</code>/<code>liquidity</code> when Gamma exposes them.</p>
+<h3 id="kfishdecisions"><code>kfish.decisions</code><a class="headerlink" href="#kfishdecisions" title="Permanent link">&para;</a></h3>
+<p>One row per <em>swarm output</em> for a given market at a given timestamp:</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>decision_id</code></td>
+<td>UUID, PK</td>
+</tr>
+<tr>
+<td><code>market_id</code>, <code>ts</code></td>
+<td>Forecast point</td>
+</tr>
+<tr>
+<td><code>horizon_hours</code></td>
+<td>Time to resolution at <code>ts</code></td>
+</tr>
+<tr>
+<td><code>ensemble_prob</code></td>
+<td>Calibrated YES probability</td>
+</tr>
+<tr>
+<td><code>ensemble_method</code></td>
+<td>e.g. <code>"median+extremize"</code> or <code>"venn_abers"</code></td>
+</tr>
+<tr>
+<td><code>ensemble_conf</code></td>
+<td>Aggregator-reported confidence</td>
+</tr>
+<tr>
+<td><code>market_price_at_ts</code></td>
+<td>Observed Polymarket mid</td>
+</tr>
+<tr>
+<td><code>edge_bps</code></td>
+<td><code>10000 * (ensemble_prob − market_price_at_ts)</code></td>
+</tr>
+<tr>
+<td><code>kelly_frac</code></td>
+<td>Sized position fraction</td>
+</tr>
+<tr>
+<td><code>traded</code></td>
+<td>Whether it was actually routed</td>
+</tr>
+<tr>
+<td><code>trade_size_usd</code></td>
+<td>Actual USDC sent</td>
+</tr>
+<tr>
+<td><code>prompt_version</code>, <code>git_sha</code></td>
+<td>Reproducibility tags</td>
+</tr>
+</tbody>
+</table>
+<h3 id="kfishagent_outputs"><code>kfish.agent_outputs</code><a class="headerlink" href="#kfishagent_outputs" title="Permanent link">&para;</a></h3>
+<p>Per-persona reasoning that built a decision. <code>PRIMARY KEY (decision_id,
+agent_name)</code>. Stores the full <code>reasoning</code> text, tokens in/out, cost,
+latency, Langfuse trace ID, and exact model string.</p>
+<h3 id="kfishoutcomes"><code>kfish.outcomes</code><a class="headerlink" href="#kfishoutcomes" title="Permanent link">&para;</a></h3>
+<p>Final ground truth: <code>market_id</code> (PK), <code>resolved_at</code>, <code>outcome ∈ {0, 1}</code>,
+<code>pnl_if_held</code>. This is what retrodiction, calibration, and the Brier
+decomposition join against.</p>
+<h3 id="kfisharticles"><code>kfish.articles</code><a class="headerlink" href="#kfisharticles" title="Permanent link">&para;</a></h3>
+<p>Korean news corpus. <code>article_id UUID</code>, <code>url UNIQUE</code>, <code>title_ko</code>/<code>title_en</code>,
+<code>body_ko</code>/<code>body_en</code>, <code>body_ko_tokens</code> (Kiwi-tokenized for FTS),
+<code>published_at</code>, <code>simhash BIGINT</code>, <code>embedding FLOAT[1024]</code>, <code>meta JSON</code>.
+Full-text search is built lazily via <code>fts.ensure_article_fts()</code>; see
+<a href="../news/">News Pipeline</a>.</p>
+<h3 id="kfishoracle_events-and-kfishrisk_scores"><code>kfish.oracle_events</code> and <code>kfish.risk_scores</code><a class="headerlink" href="#kfishoracle_events-and-kfishrisk_scores" title="Permanent link">&para;</a></h3>
+<p>UMA Optimistic Oracle state changes and the Bayesian risk scorer's
+per-market posteriors. <code>event_type ∈ {ProposePrice, DisputePrice, Settle,
+Reset}</code>.</p>
+<h3 id="kfishcalibration_rows-view"><code>kfish.calibration_rows</code> (view)<a class="headerlink" href="#kfishcalibration_rows-view" title="Permanent link">&para;</a></h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">decision_id</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">ts</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">ensemble_prob</span><span class="p">,</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">outcome</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">kfish</span><span class="p">.</span><span class="n">decisions</span><span class="w"> </span><span class="n">d</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="k">JOIN</span><span class="w"> </span><span class="n">kfish</span><span class="p">.</span><span class="n">outcomes</span><span class="w">  </span><span class="n">o</span><span class="w"> </span><span class="k">USING</span><span class="w"> </span><span class="p">(</span><span class="n">market_id</span><span class="p">)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">outcome</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">;</span>
 </span></code></pre></div>
-<h2 id="why-the-template-matters">Why the template matters<a class="headerlink" href="#why-the-template-matters" title="Permanent link">&para;</a></h2>
-<p>Without a structured review, a solo-dev project fails the "What went wrong?
-What worked well?" reflection in CLAUDE.md. The template is the bare minimum
-— it forces honest separation of <em>intent</em>, <em>execution</em>, <em>surprises</em>, and
-<em>decisions</em>, so future-you (or a collaborator reading this site) can
-reconstruct the why.</p>
+<p>The Brier decomposer (<code>decompose_brier_sql</code>) reads this view.</p>
+<h2 id="asof-joins">ASOF joins<a class="headerlink" href="#asof-joins" title="Permanent link">&para;</a></h2>
+<p>Every <code>(market, timestamp)</code> in <code>decisions</code> and <code>agent_outputs</code> needs the
+<em>most recent</em> <code>prices</code> row at-or-before that timestamp. Standard <code>JOIN …
+USING (market_id) WHERE ts &lt;= d.ts</code> is O(n²). DuckDB's <code>ASOF JOIN</code> is
+O(n log n):</p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">price</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">market_price</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">kfish</span><span class="p">.</span><span class="n">decisions</span><span class="w"> </span><span class="n">d</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="n">ASOF</span><span class="w"> </span><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">kfish</span><span class="p">.</span><span class="n">prices</span><span class="w"> </span><span class="n">p</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="k">ON</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">market_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">market_id</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">   </span><span class="k">AND</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">ts</span><span class="w">        </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">ts</span><span class="p">;</span>
+</span></code></pre></div>
+<p>The helper <code>asof_market_price(market_id, ts)</code> in
+<code>packages/kfish-common/src/kfish_common/db/asof.py</code> wraps this pattern
+with a bounded stale-tolerance window.</p>
+<h2 id="migrations">Migrations<a class="headerlink" href="#migrations" title="Permanent link">&para;</a></h2>
+<p>Flyway-style numbered files in <code>migrations/</code>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>V0001__init.sql              venues, markets, prices, decisions, agent_outputs, outcomes
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>V0002__add_articles_fts.sql  kfish.articles (FTS index built lazily)
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>V0003__add_oracle_events.sql oracle_events, risk_scores, calibration_rows view
+</span></code></pre></div>
+<p>Applied via <code>uv run kfish-migrate</code>. State is tracked in
+<code>kfish.schema_history</code>. <strong>Migrations are idempotent:</strong> re-running against
+an already-migrated database is a no-op.</p>
+<div class="admonition warning">
+<p class="admonition-title">Never edit an applied migration</p>
+<p>Rule from ADR-0002. If you need to fix a shipped migration, add
+<code>V000N+1__fix_…sql</code>. The <code>UNIQUE(version)</code> constraint in
+<code>schema_history</code> will reject a re-applied file with modified
+contents.</p>
+</div>
+<h2 id="timezone-discipline">Timezone discipline<a class="headerlink" href="#timezone-discipline" title="Permanent link">&para;</a></h2>
+<p>Every timestamp column is <code>TIMESTAMPTZ</code>. All application code writes UTC.
+The systemd <code>kfish-nightly.service</code> pins <code>Environment=TZ=UTC</code> to avoid
+KST↔UTC boundary artifacts (see <a href="../validation/">Validation</a> §cutover).</p>
+<h2 id="related">Related<a class="headerlink" href="#related" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Schema files: <code>migrations/V000*.sql</code></li>
+<li>DuckDB client: <code>packages/kfish-common/src/kfish_common/db/</code></li>
+<li>ADR-0002: DuckDB + ASOF + Parquet interop</li>
+</ul>
 
 
 
@@ -1998,7 +2404,7 @@ reconstruct the why.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 19, 2026 03:23:54 UTC">2026-04-19</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 19, 2026 23:52:02 UTC">2026-04-19</span>
   </span>
 
     
@@ -2008,7 +2414,7 @@ reconstruct the why.</p>
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 19, 2026 03:23:54 UTC">2026-04-19</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 19, 2026 23:52:02 UTC">2026-04-19</span>
   </span>
 
     
