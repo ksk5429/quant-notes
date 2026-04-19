@@ -126,6 +126,7 @@ nav:
       - Build Log: progress/build-log.md
       - Brier Parity: progress/brier-parity.md
       - Live-API Validation: progress/live-validation.md
+      - News Scraper: progress/news-scraper.md
       - HIP-4 Watch: progress/hip4-watch.md
   - Reviews:
       - Self-Review Template: reviews/template.md

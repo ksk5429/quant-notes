@@ -7,6 +7,39 @@ description: What shipped when
 
 Reverse-chronological entries. Each entry links the commit + a short why.
 
+## 2026-04-20 — M4 scraper operational (6 RSS feeds live)
+
+Korean news scraper running end-to-end on real feeds. **M4 (90-day
+blueprint's "scraper + oracle ingest") is now complete.**
+
+Shipped:
+
+- `apps/kfish-core/src/kfish_core/pipeline/ingest_articles.py` —
+  orchestrator: 6 sources → SimHash-48h-dedup → Kiwi tokenize → UPSERT
+  → lazy FTS rebuild. Every step independently failure-tolerant;
+  missing credentials degrade gracefully.
+- `kfish-news` CLI with `--dry-run`, `--stats`, per-tier `--sources`,
+  `--translate-bulk` (Papago), `--translate-high-signal N` (Claude).
+- Nightly pipeline now runs news ingestion alongside markets + oracle,
+  with `KFISH_NAVER_QUERIES` env override.
+- 7 unit tests + 7 live-network tests (all RSS feeds probed on
+  2026-04-20).
+- Bug found + fixed: SimHash64 is unsigned; DuckDB BIGINT is signed
+  int64; added `_to_signed_64` reinterpret at the DB boundary.
+- RSS URL correction: Hankyoreh redirects `/rss/` → `/rss` (saves one
+  round-trip per run).
+- 6 canonical feeds: yonhap, yonhap_econ, hankyoreh, blockmedia,
+  dailynk, donga.
+- [Full evidence on the news-scraper page](news-scraper.md).
+
+First live run: **60 articles fetched, 4 near-duplicates caught, 56
+inserted with Kiwi tokens, FTS built — 13.5 s total.**
+
+Naver tier remains pending your Developer-app registration (operator
+task, free tier, instructions in
+[`runbooks/scraper-ops.md`](https://github.com/ksk5429/kfish/blob/main/runbooks/scraper-ops.md)
+in the private repo).
+
 ## 2026-04-19 — Live-trading hardening (18/18 review items fixed)
 
 After the live-API validation, spawned independent code + security review
