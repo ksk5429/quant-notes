@@ -1,0 +1,134 @@
+site_name: "K-Fish Quant Notes"
+site_url: "https://ksk5429.github.io/quant-notes/"
+site_description: "Development notes, reviews, and progress log for the K-Fish swarm-intelligence prediction-market engine. Companion to github.com/ksk5429/kfish (private) and github.com/ksk5429/polymarket-oracle-risk (public)."
+site_author: "Kyeong Sun Kim"
+copyright: "Copyright &copy; 2026 Kyeong Sun Kim. All rights reserved."
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ksk5429
+      name: GitHub
+    - icon: fontawesome/solid/envelope
+      link: mailto:kyeongsunkim@snu.ac.kr
+      name: Email
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/ksk5429
+      name: LinkedIn
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.path
+    - navigation.top
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: teal
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github
+    admonition:
+      note: octicons/tag-16
+      abstract: octicons/checklist-16
+      info: octicons/info-16
+      tip: octicons/squirrel-16
+      warning: octicons/alert-16
+      danger: octicons/zap-16
+  font:
+    text: Inter
+    code: JetBrains Mono
+
+repo_name: ksk5429/kfish
+repo_url: https://github.com/ksk5429/kfish
+edit_uri: edit/main/quant-notes-site/docs/
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.arithmatex:
+      generic: true
+
+plugins:
+  - search
+  - tags
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: iso_date
+      enable_git_follow: false
+      fallback_to_build_date: true
+
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+nav:
+  - Home: index.md
+  - Blueprints:
+      - 90-Day Build Guide: blueprints/90-day-build-guide.md
+      - Three-Repo GitHub Blueprint: blueprints/three-repo-blueprint.md
+  - Architecture:
+      - Overview: architecture/overview.md
+      - ADRs: architecture/adrs.md
+      - Swarm + Calibration: architecture/swarm-calibration.md
+      - Oracle Risk: architecture/oracle-risk.md
+      - Telegram Bot: architecture/hypekr-bot.md
+  - Progress:
+      - Build Log: progress/build-log.md
+      - Brier Parity: progress/brier-parity.md
+      - Live-API Validation: progress/live-validation.md
+      - HIP-4 Watch: progress/hip4-watch.md
+  - Reviews:
+      - Self-Review Template: reviews/template.md
+      - Open Questions: reviews/open-questions.md
+  - Links:
+      - Related Repos: links.md
