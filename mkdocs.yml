@@ -113,6 +113,19 @@ extra_javascript:
 
 nav:
   - Home: index.md
+  - Docs:
+      - Overview: docs/index.md
+      - Getting Started: docs/getting-started.md
+      - Theory and Math: docs/theory.md
+      - Swarm Architecture: docs/swarm.md
+      - Calibration Stack: docs/calibration.md
+      - News Pipeline: docs/news.md
+      - Data Model: docs/data-model.md
+      - Operations: docs/operations.md
+      - Validation: docs/validation.md
+      - Prompt Engineering: docs/prompt-engineering.md
+      - Glossary: docs/glossary.md
+      - References: docs/references.md
   - Blueprints:
       - 90-Day Build Guide: blueprints/90-day-build-guide.md
       - Three-Repo GitHub Blueprint: blueprints/three-repo-blueprint.md
