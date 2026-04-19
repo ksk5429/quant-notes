@@ -130,5 +130,6 @@ nav:
   - Reviews:
       - Self-Review Template: reviews/template.md
       - Open Questions: reviews/open-questions.md
+      - 2026-04-19 Live-Hardening: reviews/2026-04-19-live-hardening.md
   - Links:
       - Related Repos: links.md

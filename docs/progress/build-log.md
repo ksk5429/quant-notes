@@ -7,6 +7,36 @@ description: What shipped when
 
 Reverse-chronological entries. Each entry links the commit + a short why.
 
+## 2026-04-19 — Live-trading hardening (18/18 review items fixed)
+
+After the live-API validation, spawned independent code + security review
+agents plus my own coverage / pyright audit. They flagged 18 issues across
+CRITICAL / HIGH / MEDIUM / LOW. Every single one is fixed — see the
+[full review](../reviews/2026-04-19-live-hardening.md).
+
+Headlines:
+
+- `/close`, `/positions`, `/balance` now hit the real HL info endpoint.
+  No more hardcoded 100.0 reference price, no more placeholder strings,
+  no more "order accepted" on an order that was never sent.
+- `HYPEKR_APP_SIGNING_SECRET` is now a required ≥32-char value — the silent
+  `"dev-only-insecure-secret"` fallback that would have let attackers forge
+  wallet approvals from public source is gone. 9 regression tests enforce
+  this at `build_app()` time.
+- HKDF is now real RFC-5869 HKDF with a static domain-separation salt + per-
+  user `info` binding, not a single HMAC-SHA256 step.
+- Mondrian conformal stratifies by true class. Per-class coverage test
+  added — passes at ≥ 0.86 for both classes on out-of-sample data.
+- Delphi convergence checks absolute spread, not delta. No more early-exit
+  at spread=0.29 when target is 0.02.
+- `WalletStore` DuckDB connection now guarded by `threading.RLock` so
+  concurrent aiogram handlers serialize cleanly.
+- `pypa/gh-action-pypi-publish` + all publishing-path actions SHA-pinned
+  (`6733eb7d…` for v1.14.0).
+- Raw Ethereum addresses never appear in logs — only 12-char SHA-256
+  fingerprints.
+- Pyright: 14 errors → **0 errors**. Ruff: clean. Tests: **140/140** pass.
+
 ## 2026-04-19 — Live-API validation + Brier-parity + quant-notes
 
 - Probed live Polymarket Gamma + UMA Goldsky OOv2 + Managed OOv2 — all three

@@ -7,6 +7,12 @@ description: Currently-ambiguous design choices to discuss
 
 Currently-ambiguous design choices. PRs and issue comments welcome.
 
+!!! success "Resolved in 2026-04-19 live-hardening pass"
+    - `/close`, `/positions`, `/balance`, `_reference_price` stubs — all now hit live HL info endpoints
+    - `HYPEKR_APP_SIGNING_SECRET` silent-default risk — now required ≥32-char
+    - Mondrian conformal stratification bug — fixed with per-class arrays
+    - See [2026-04-19 Live-Hardening](2026-04-19-live-hardening.md) for the full 18-item changelog
+
 ## 1. Should `ksk5429/quant` (the old public repo) be archived?
 
 The old public repo at <https://github.com/ksk5429/quant> was the scratch
