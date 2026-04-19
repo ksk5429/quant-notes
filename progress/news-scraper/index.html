@@ -6,19 +6,19 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="How the three K-Fish packages fit together">
+        <meta name="description" content="Status + evidence that the news ingestion pipeline is operational">
       
       
         <meta name="author" content="Kyeong Sun Kim">
       
       
-        <link rel="canonical" href="https://ksk5429.github.io/quant-notes/architecture/overview/">
+        <link rel="canonical" href="https://ksk5429.github.io/quant-notes/progress/news-scraper/">
       
       
-        <link rel="prev" href="../../blueprints/three-repo-blueprint/">
+        <link rel="prev" href="../live-validation/">
       
       
-        <link rel="next" href="../adrs/">
+        <link rel="next" href="../hip4-watch/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>Architecture overview - K-Fish Quant Notes</title>
+        <title>Korean news scraper - K-Fish Quant Notes</title>
       
     
     
@@ -115,7 +115,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#architecture-overview" class="md-skip">
+        <a href="#korean-news-scraper" class="md-skip">
           Skip to content
         </a>
       
@@ -149,7 +149,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Architecture overview
+              Korean news scraper
             
           </span>
         </div>
@@ -299,13 +299,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../architecture/overview/" class="md-tabs__link">
           
   
   
@@ -321,11 +319,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../progress/build-log/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../build-log/" class="md-tabs__link">
           
   
   
@@ -607,31 +607,26 @@
       
   
   
-    
   
   
-  
     
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
@@ -649,7 +644,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -664,37 +659,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../architecture/overview/" class="md-nav__link">
         
   
   
@@ -710,92 +678,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#the-three-packages-at-a-glance" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The three packages at a glance
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-a-hybrid-monorepo-polyrepo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why a hybrid (monorepo + polyrepo)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-duckdb-calibration-spine" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The DuckDB calibration spine
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-9-personas" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The 9 personas
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-calibration-stack" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The calibration stack
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#oracle-risk-public-package" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Oracle risk (public package)
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -808,7 +690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../adrs/" class="md-nav__link">
+      <a href="../../architecture/adrs/" class="md-nav__link">
         
   
   
@@ -836,7 +718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../swarm-calibration/" class="md-nav__link">
+      <a href="../../architecture/swarm-calibration/" class="md-nav__link">
         
   
   
@@ -864,7 +746,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../oracle-risk/" class="md-nav__link">
+      <a href="../../architecture/oracle-risk/" class="md-nav__link">
         
   
   
@@ -892,7 +774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hypekr-bot/" class="md-nav__link">
+      <a href="../../architecture/hypekr-bot/" class="md-nav__link">
         
   
   
@@ -924,26 +806,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
@@ -961,7 +848,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -979,7 +866,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../progress/build-log/" class="md-nav__link">
+      <a href="../build-log/" class="md-nav__link">
         
   
   
@@ -1007,7 +894,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../progress/brier-parity/" class="md-nav__link">
+      <a href="../brier-parity/" class="md-nav__link">
         
   
   
@@ -1035,7 +922,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../progress/live-validation/" class="md-nav__link">
+      <a href="../live-validation/" class="md-nav__link">
         
   
   
@@ -1060,10 +947,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../progress/news-scraper/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    News Scraper
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1079,6 +993,131 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#end-to-end-evidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        End-to-end evidence
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="End-to-end evidence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#real-headlines-that-landed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real headlines that landed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kiwi-tokenization-on-the-same-articles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kiwi tokenization on the same articles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-was-built" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What was built
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-invariants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design invariants
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test coverage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cost-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cost profile
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-unlocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What this unlocks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-docs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related docs
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1091,7 +1130,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../progress/hip4-watch/" class="md-nav__link">
+      <a href="../hip4-watch/" class="md-nav__link">
         
   
   
@@ -1490,10 +1529,49 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-three-packages-at-a-glance" class="md-nav__link">
+  <a href="#end-to-end-evidence" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The three packages at a glance
+        End-to-end evidence
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="End-to-end evidence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#real-headlines-that-landed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real headlines that landed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kiwi-tokenization-on-the-same-articles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kiwi tokenization on the same articles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-was-built" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What was built
       
     </span>
   </a>
@@ -1501,10 +1579,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-a-hybrid-monorepo-polyrepo" class="md-nav__link">
+  <a href="#design-invariants" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why a hybrid (monorepo + polyrepo)
+        Design invariants
       
     </span>
   </a>
@@ -1512,10 +1590,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-duckdb-calibration-spine" class="md-nav__link">
+  <a href="#test-coverage" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The DuckDB calibration spine
+        Test coverage
       
     </span>
   </a>
@@ -1523,10 +1601,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-9-personas" class="md-nav__link">
+  <a href="#cost-profile" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The 9 personas
+        Cost profile
       
     </span>
   </a>
@@ -1534,10 +1612,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-calibration-stack" class="md-nav__link">
+  <a href="#what-this-unlocks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The calibration stack
+        What this unlocks
       
     </span>
   </a>
@@ -1545,10 +1623,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#oracle-risk-public-package" class="md-nav__link">
+  <a href="#related-docs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Oracle risk (public package)
+        Related docs
       
     </span>
   </a>
@@ -1598,10 +1676,10 @@
     
     
       <li class="md-path__item">
-        <a href="./" class="md-path__link">
+        <a href="../build-log/" class="md-path__link">
           
   <span class="md-ellipsis">
-    Architecture
+    Progress
   </span>
 
         </a>
@@ -1623,105 +1701,161 @@
   
 
 
-<h1 id="architecture-overview">Architecture overview<a class="headerlink" href="#architecture-overview" title="Permanent link">&para;</a></h1>
-<h2 id="the-three-packages-at-a-glance">The three packages at a glance<a class="headerlink" href="#the-three-packages-at-a-glance" title="Permanent link">&para;</a></h2>
-<pre class="mermaid"><code>flowchart TB
-    subgraph private["ksk5429/kfish (private monorepo)"]
-        direction TB
-        common["packages/kfish-common&lt;br/&gt;DuckDB + LLM + config"]
-        core["apps/kfish-core&lt;br/&gt;9-agent swarm · calibration · Polymarket/UMA ingest · news"]
-        bot["apps/hypekr-bot&lt;br/&gt;aiogram 3 · Fernet wallets · FastAPI Mini App"]
-        common --&gt; core
-        common --&gt; bot
-        core -.DuckDB spine.-&gt; core
-    end
-
-    subgraph public["ksk5429/polymarket-oracle-risk (public, MIT)"]
-        analyzer["Bayesian logistic over UMA features&lt;br/&gt;NumPyro NUTS · subjectivity scorer · refusal gate"]
-    end
-
-    subgraph notes["ksk5429/quant-notes (this site)"]
-        pages["MkDocs Material · GitHub Pages&lt;br/&gt;blueprints · ADRs · progress"]
-    end
-
-    common --&gt; public
-    core --&gt; pages
-    bot --&gt; pages
-
-    classDef private_ fill:#1e293b,color:#e2e8f0,stroke:#334155
-    classDef public_ fill:#064e3b,color:#d1fae5,stroke:#065f46
-    classDef notes_ fill:#4338ca,color:#e0e7ff,stroke:#4f46e5
-    class common,core,bot private_
-    class analyzer public_
-    class pages notes_</code></pre>
-<h2 id="why-a-hybrid-monorepo-polyrepo">Why a hybrid (monorepo + polyrepo)<a class="headerlink" href="#why-a-hybrid-monorepo-polyrepo" title="Permanent link">&para;</a></h2>
-<p>GitHub's visibility is per-repo, not per-directory. Mixing production alpha
-with a public PyPI package in a single repo forces a choice between leaking
-alpha and skipping the publishable artifact. The blueprint resolves this with:</p>
-<ul>
-<li>one <strong>private uv-workspace monorepo</strong> (<code>kfish</code>) for everything that must not
-  leak — the 9-persona prompts, calibration bundles, Telegram bot;</li>
-<li>one <strong>standalone public repo</strong> (<code>polymarket-oracle-risk</code>) for the analyzer;</li>
-<li>this <strong>docs site</strong> (<code>quant-notes</code>) for non-alpha context and review.</li>
-</ul>
-<p>See <a href="../adrs/#adr-0001">ADR-0001</a> for the full analysis.</p>
-<h2 id="the-duckdb-calibration-spine">The DuckDB calibration spine<a class="headerlink" href="#the-duckdb-calibration-spine" title="Permanent link">&para;</a></h2>
-<p>The single highest-leverage piece is a DuckDB warehouse where every forecast,
-market price, oracle event, news article, and outcome shares a UTC timeline
-joined via <code>ASOF JOIN</code>.</p>
-<pre class="mermaid"><code>flowchart LR
-    gamma[Polymarket Gamma]--&gt;|ingest_prices|prices
-    clob[Polymarket CLOB]--&gt;|websocket|prices
-    uma[UMA Goldsky]--&gt;|ingest_oracle|oracle
-    news[Korean news sources]--&gt;|scraper|articles
-    swarm[9-agent swarm]--&gt;|decisions|decisions
-    outcomes[Resolved markets]--&gt;outcomes_t[outcomes]
-
-    prices &amp; decisions --ASOF JOIN--&gt; brier[Brier decomposition]
-    decisions &amp; outcomes_t --&gt; brier
-    oracle &amp; articles --&gt; analyzer[polymarket-oracle-risk]</code></pre>
-<p>Everything downstream — the refusal gate, the shrinkage ensemble, the
-retrodiction pipeline, the nightly Parquet snapshot — reads or writes one
-file: <code>data/warehouse/kfish.duckdb</code>.</p>
-<h2 id="the-9-personas">The 9 personas<a class="headerlink" href="#the-9-personas" title="Permanent link">&para;</a></h2>
-<p>Schoenegger et al. 2024 showed that <strong>structural reasoning diversity beats
-model diversity</strong> in LLM forecasting ensembles. K-Fish runs nine orthogonal
-personas, one of which (<code>red_team</code>) routes to the opposite provider:</p>
-<ol>
-<li><code>contrarian</code></li>
-<li><code>inside_view</code></li>
-<li><code>outside_view</code></li>
-<li><code>premortem</code></li>
-<li><code>devils_advocate</code></li>
-<li><code>quant</code></li>
-<li><code>geopolitical</code></li>
-<li><code>macro</code></li>
-<li><code>red_team</code> — always on the opposite provider to the ensemble</li>
-</ol>
-<p>Per-persona samples aggregate via median (default) or trimmed-mean, then go
-through asymmetric extremization that pushes confident consensus outward but
-shrinks dispersed consensus toward 0.5.</p>
-<h2 id="the-calibration-stack">The calibration stack<a class="headerlink" href="#the-calibration-stack" title="Permanent link">&para;</a></h2>
-<p>Raw LLM probabilities are never used directly. The pipeline is:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>raw_prob (9 personas, Delphi&#39;d)
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  → isotonic per category       (low-bias, needs n &gt;= 150)
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  → Venn-Abers                  (distribution-free intervals)
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  → Mondrian conformal gate     (skip if prediction set = {0, 1})
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  → shrinkage ensemble          (α · p_llm + (1 - α) · p_market, α EB-shrunk)
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  → final probability
+<h1 id="korean-news-scraper">Korean news scraper<a class="headerlink" href="#korean-news-scraper" title="Permanent link">&para;</a></h1>
+<p><strong>Status as of 2026-04-20: operational on the RSS tier.</strong> 6 sources
+landing live Korean news into <code>kfish.articles</code> with full Kiwi
+tokenization and FTS indexing. Naver News search tier pending
+credentials.</p>
+<h2 id="end-to-end-evidence">End-to-end evidence<a class="headerlink" href="#end-to-end-evidence" title="Permanent link">&para;</a></h2>
+<p>One live run against real sources:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$ uv run --package kfish-core kfish-news --sources rss --max-per-source 10
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>naver: credentials absent; skipping
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>rss source=yonhap       -&gt; 10 articles
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>rss source=yonhap_econ  -&gt; 10 articles
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>rss source=hankyoreh    -&gt; 10 articles
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>rss source=blockmedia   -&gt; 10 articles
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>rss source=dailynk      -&gt; 10 articles
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>rss source=donga        -&gt; 10 articles
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>built FTS index kfish.articles
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>ingest_news: fetched=60 dupes=4 inserted=56 tokenized=0 translated=0 duration=13.5s
 </span></code></pre></div>
-<p>See <a href="../adrs/#adr-0008">ADR-0008</a> and the
-<a href="../swarm-calibration/">calibration deep-dive</a>.</p>
-<h2 id="oracle-risk-public-package">Oracle risk (public package)<a class="headerlink" href="#oracle-risk-public-package" title="Permanent link">&para;</a></h2>
-<p>The public analyzer is a <strong>Bayesian logistic</strong> over UMA resolution features:</p>
+<p>60 articles fetched, 4 SimHash-64 near-duplicates dropped (≈7%), 56
+inserted, FTS index auto-built. 13.5 s end-to-end.</p>
+<h3 id="real-headlines-that-landed">Real headlines that landed<a class="headerlink" href="#real-headlines-that-landed" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>[yonhap] 고가 작품 수차례 거래한 미술상…법원 &quot;사업소득 과세 대상&quot;
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>[yonhap] [오늘의 국회일정](20일·월)
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>[yonhap] [2026 와이팜 엑스포] ① 경기·강원·제주
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>[dailynk] 실력 미달 학생은 탄광행?…기대 이하 성적에 강력 경고
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>[dailynk] [북한읽기] 아프리카돼지열병 재확산, 어떻게 대응해야 하나
+</span></code></pre></div>
+<h3 id="kiwi-tokenization-on-the-same-articles">Kiwi tokenization on the same articles<a class="headerlink" href="#kiwi-tokenization-on-the-same-articles" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>title: 실력 미달 학생은 탄광행?…기대 이하 성적에 강력 경고
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>tokens: 실력 미달 학생 탄광 행 기대 이하 성적 강력 경고 북한 올해 학기
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>        고급 중학교 고등학교 선택 과목 전면 도입 가운데 전공 반 시험 대거 낙제 …
+</span></code></pre></div>
+<p>Particles (은/는/이/가) and endings (했다/한다) are correctly stripped;
+nouns + verbs preserved. Exactly what FTS needs.</p>
+<h2 id="what-was-built">What was built<a class="headerlink" href="#what-was-built" title="Permanent link">&para;</a></h2>
+<p>New pipeline module, new CLI, wired into the nightly runner:</p>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>apps/kfish-core/src/kfish_core/pipeline/ingest_articles.py</code></td>
+<td>Orchestrator: fetch → dedup → tokenize → upsert → FTS</td>
+</tr>
+<tr>
+<td><code>apps/kfish-core/src/kfish_core/cli/news.py</code></td>
+<td>Operator CLI (<code>kfish-news</code>)</td>
+</tr>
+<tr>
+<td><code>apps/kfish-core/src/kfish_core/pipeline/nightly.py</code></td>
+<td>News ingestion added to the nightly flow with graceful degradation</td>
+</tr>
+<tr>
+<td><code>runbooks/scraper-ops.md</code></td>
+<td>Full operator runbook (Naver app registration, scheduling, troubleshooting) in the private kfish repo</td>
+</tr>
+</tbody>
+</table>
+<h2 id="design-invariants">Design invariants<a class="headerlink" href="#design-invariants" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Every step is independently failure-tolerant.</strong> A dead upstream
+   feed, missing credential, or translation-API outage degrades only
+   that step. Nightly cron keeps making forward progress.</li>
+<li><strong>RSS works without any credentials.</strong> Zero-config path for
+   development. Only Naver + Papago + Claude need keys.</li>
+<li><strong>Idempotent on re-run.</strong> <code>ON CONFLICT(url) DO NOTHING</code> + sliding
+   SimHash window means running twice in 20 seconds inserts nothing
+   new. Running daily over a month produces clean monotonic growth.</li>
+<li><strong>Bit-exact SimHash storage.</strong> DuckDB BIGINT is signed int64;
+   SimHash64 is unsigned 0–2⁶⁴−1. A <code>_to_signed_64</code> helper reinterprets
+   the bit pattern so Hamming distances stay meaningful across
+   store/fetch cycles.</li>
+<li><strong>FTS index is lazy and once-only.</strong> <code>ensure_article_fts()</code> writes a
+   <code>kfish.fts_state</code> bookkeeping row so repeated runs skip the rebuild.</li>
+</ol>
+<h2 id="test-coverage">Test coverage<a class="headerlink" href="#test-coverage" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Priors: β ~ Normal(0, 1), α ~ Normal(-3, 2) (base rate ≈ 2%)</li>
-<li>Posterior via NumPyro NUTS</li>
-<li>Subjectivity scored by a Claude/GPT rubric with a <strong>Zelenskyy regression
-  test</strong> that must always score ≥ 0.75</li>
-<li>Refusal gate hard-refuses markets with <code>mean &gt; 0.35</code> <em>or</em> 95% CI width &gt; 0.50</li>
+<li><strong>7 unit tests</strong> in <code>apps/kfish-core/tests/test_ingest_articles.py</code>
+  covering: happy path, re-run idempotency, SimHash near-duplicate
+  dropping, missing-creds graceful skip, per-source failure isolation,
+  token-column write, stats summary shape.</li>
+<li><strong>7 live-network tests</strong> in <code>apps/kfish-core/tests/test_news_live.py</code>
+  (under <code>-m network</code>, skipped by default) that hit all 6 canonical
+  RSS feeds plus Naver if creds are set. Green on 2026-04-20.</li>
+<li><strong>Existing 9 tests</strong> in <code>apps/kfish-core/tests/test_news.py</code> for
+  SimHash, Kiwi tokenizer, translation router — unchanged.</li>
 </ul>
-<p>The gate folds back into K-Fish's <code>kfish-core</code> as a pre-trade filter.</p>
+<h2 id="cost-profile">Cost profile<a class="headerlink" href="#cost-profile" title="Permanent link">&para;</a></h2>
+<p>Target volume is blueprint §1.8's 1000 articles/day. At that throughput:</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>~₩/day</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RSS fetches (6 feeds × 24 polls/day)</td>
+<td>free</td>
+<td>Negligible bandwidth</td>
+</tr>
+<tr>
+<td>Naver News API (within 25k/day tier)</td>
+<td>free</td>
+<td></td>
+</tr>
+<tr>
+<td>Kiwi tokenization</td>
+<td>free</td>
+<td>Local</td>
+</tr>
+<tr>
+<td>Papago bulk (titles only, ~200K chars/day)</td>
+<td>~₩3 000</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>Claude high-signal (50 articles/day)</td>
+<td>~₩6 000</td>
+<td>Sonnet + prompt caching</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>~₩9 000 / day</strong> (~$6.50)</td>
+<td>under blueprint budget</td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-this-unlocks">What this unlocks<a class="headerlink" href="#what-this-unlocks" title="Permanent link">&para;</a></h2>
+<p>The scraper operational was the last hard dependency for <strong>M4
+(scraper + oracle ingest)</strong> from the 90-day blueprint. With it:</p>
+<ul>
+<li>The DuckDB spine now has a news feed every night on top of markets +
+  oracle events — the calibration spine is information-complete per the
+  blueprint §1 vision.</li>
+<li>The 9-persona swarm's future <code>news-aware Fish</code> can read
+  <code>kfish.articles</code> via FTS + ASOF-join to markets for reference-class
+  lookups.</li>
+<li>The <code>PROMPT_EXTRACT_SIGNAL_V3</code> prompt in <code>agents/prompts.py</code> now has
+  a real corpus to run against; it wasn't fired in production yet, but
+  is the next natural extension.</li>
+</ul>
+<h2 id="related-docs">Related docs<a class="headerlink" href="#related-docs" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://github.com/ksk5429/kfish/blob/main/runbooks/scraper-ops.md">Scraper operator runbook</a> — full ops guide in the private repo</li>
+<li><a href="../../architecture/swarm-calibration/">Architecture: swarm + calibration</a> — where the news feed plugs into the forecasting loop</li>
+<li><a href="../../architecture/adrs/#adr-0002">ADR-0002: DuckDB calibration spine</a> — the warehouse schema that hosts <code>kfish.articles</code></li>
+<li><a href="../build-log/">Build log</a> — the commit that shipped this</li>
+</ul>
 
 
 
@@ -1744,7 +1878,7 @@ shrinks dispersed consensus toward 0.5.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 19, 2026 03:23:54 UTC">2026-04-19</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 19, 2026 22:44:16 UTC">2026-04-19</span>
   </span>
 
     
@@ -1754,7 +1888,7 @@ shrinks dispersed consensus toward 0.5.</p>
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 19, 2026 03:23:54 UTC">2026-04-19</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 19, 2026 22:44:16 UTC">2026-04-19</span>
   </span>
 
     

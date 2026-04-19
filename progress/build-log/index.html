@@ -926,6 +926,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#2026-04-20-m4-scraper-operational-6-rss-feeds-live" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2026-04-20 — M4 scraper operational (6 RSS feeds live)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#2026-04-19-live-trading-hardening-1818-review-items-fixed" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1021,6 +1032,34 @@
     
   
     Live-API Validation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../news-scraper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    News Scraper
   
 
     
@@ -1440,6 +1479,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#2026-04-20-m4-scraper-operational-6-rss-feeds-live" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2026-04-20 — M4 scraper operational (6 RSS feeds live)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#2026-04-19-live-trading-hardening-1818-review-items-fixed" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1553,6 +1603,35 @@
 
 <h1 id="build-log">Build log<a class="headerlink" href="#build-log" title="Permanent link">&para;</a></h1>
 <p>Reverse-chronological entries. Each entry links the commit + a short why.</p>
+<h2 id="2026-04-20-m4-scraper-operational-6-rss-feeds-live">2026-04-20 — M4 scraper operational (6 RSS feeds live)<a class="headerlink" href="#2026-04-20-m4-scraper-operational-6-rss-feeds-live" title="Permanent link">&para;</a></h2>
+<p>Korean news scraper running end-to-end on real feeds. <strong>M4 (90-day
+blueprint's "scraper + oracle ingest") is now complete.</strong></p>
+<p>Shipped:</p>
+<ul>
+<li><code>apps/kfish-core/src/kfish_core/pipeline/ingest_articles.py</code> —
+  orchestrator: 6 sources → SimHash-48h-dedup → Kiwi tokenize → UPSERT
+  → lazy FTS rebuild. Every step independently failure-tolerant;
+  missing credentials degrade gracefully.</li>
+<li><code>kfish-news</code> CLI with <code>--dry-run</code>, <code>--stats</code>, per-tier <code>--sources</code>,
+  <code>--translate-bulk</code> (Papago), <code>--translate-high-signal N</code> (Claude).</li>
+<li>Nightly pipeline now runs news ingestion alongside markets + oracle,
+  with <code>KFISH_NAVER_QUERIES</code> env override.</li>
+<li>7 unit tests + 7 live-network tests (all RSS feeds probed on
+  2026-04-20).</li>
+<li>Bug found + fixed: SimHash64 is unsigned; DuckDB BIGINT is signed
+  int64; added <code>_to_signed_64</code> reinterpret at the DB boundary.</li>
+<li>RSS URL correction: Hankyoreh redirects <code>/rss/</code> → <code>/rss</code> (saves one
+  round-trip per run).</li>
+<li>6 canonical feeds: yonhap, yonhap_econ, hankyoreh, blockmedia,
+  dailynk, donga.</li>
+<li><a href="../news-scraper/">Full evidence on the news-scraper page</a>.</li>
+</ul>
+<p>First live run: <strong>60 articles fetched, 4 near-duplicates caught, 56
+inserted with Kiwi tokens, FTS built — 13.5 s total.</strong></p>
+<p>Naver tier remains pending your Developer-app registration (operator
+task, free tier, instructions in
+<a href="https://github.com/ksk5429/kfish/blob/main/runbooks/scraper-ops.md"><code>runbooks/scraper-ops.md</code></a>
+in the private repo).</p>
 <h2 id="2026-04-19-live-trading-hardening-1818-review-items-fixed">2026-04-19 — Live-trading hardening (18/18 review items fixed)<a class="headerlink" href="#2026-04-19-live-trading-hardening-1818-review-items-fixed" title="Permanent link">&para;</a></h2>
 <p>After the live-API validation, spawned independent code + security review
 agents plus my own coverage / pyright audit. They flagged 18 issues across
@@ -1656,7 +1735,7 @@ CRITICAL / HIGH / MEDIUM / LOW. Every single one is fixed — see the
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 19, 2026 05:19:07 UTC">2026-04-19</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 19, 2026 22:44:16 UTC">2026-04-19</span>
   </span>
 
     
