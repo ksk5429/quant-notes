@@ -16,7 +16,7 @@ description: Development notes and progress log for the K-Fish prediction-market
     - **Parity**: new kfish-core calibration matches legacy Brier **exact to 4 decimal places** across all three archived runs
     - **Public endpoints live**: Polymarket Gamma + UMA OOv2 + Managed OOv2 (validated April 2026)
     - **Stack**: 9-persona Delphi swarm · isotonic + Venn-Abers + Mondrian conformal · DuckDB ASOF spine · Claude + OpenAI routing
-    - **123 tests** pass in the production workspace; `ruff` and `ruff format` clean
+    - **138 tests** pass in the active workspace; `ruff` and `pyright` clean
 
 ## Why two sites
 

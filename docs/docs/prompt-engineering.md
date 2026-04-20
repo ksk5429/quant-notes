@@ -11,12 +11,12 @@ versioned part of the experiment log, not a loose concern.
 
 ## Prompt registry
 
-| Version | Used by | Purpose |
+| Constant | Used by | Purpose |
 |---|---|---|
-| `PERSONA_BASE_V2` | `personas.build_persona_system_prompt` | Single shared template injected with per-persona `description` |
-| `DELPHI_FACILITATOR_V2` | `delphi.run_delphi` | Round-over-round facilitator instructions |
-| `TRANSLATE_V2` | `translate._observed_translate` | Claude high-signal translator |
-| `CRITIC_V2` | `agents.critic` (legacy path) | Evaluator-only role |
+| `PROMPT_PERSONA_BASE_V2` | `personas.build_persona_system_prompt` | Single shared template injected with per-persona `description` |
+| `PROMPT_EXTRACT_SIGNAL_V3` | market + news signal extraction | Structured-JSON extraction of resolution criteria and relevant news summaries |
+| `PROMPT_TRANSLATE_V2` | `translate._observed_translate` | Claude high-signal KO→EN translator |
+| `PROMPT_RED_TEAM_V1` | `personas.red_team` | Adversarial-audit persona looking for overlooked risks |
 
 All templates live in `apps/kfish-core/src/kfish_core/agents/prompts.py`.
 The `prompt_version` string is written to DuckDB at decision time so

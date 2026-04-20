@@ -66,9 +66,10 @@ When `HL_NETWORK=mainnet` and the watchdog starts seeing HIP-4 symbols:
    assemble valid payloads.
 2. Enable the `/yes` / `/no` / `/predict` handlers on mainnet (they already
    work on testnet).
-3. Seed a small fraction of prediction-tile budget per ADR-0008's
-   `HIP4Scorer` — flag all HIP-4 scores as low confidence until the
-   analyzer accumulates its own dispute history.
+3. Seed a small fraction of prediction-tile budget scoped to a new
+   `hip4` category under the Mondrian conformal gate (ADR-0008) — every
+   HIP-4 score stays low confidence until the analyzer accumulates its
+   own dispute history.
 4. Update this page.
 
 ## Related ADRs

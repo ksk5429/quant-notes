@@ -1,3 +1,8 @@
+---
+title: Calibration Stack
+description: Isotonic, Venn-Abers, Mondrian conformal, empirical-Bayes ensemble
+---
+
 # Calibration Stack
 
 Raw LLM probabilities are never traded against directly. Project Rule R4

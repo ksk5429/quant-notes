@@ -124,6 +124,7 @@ nav:
       - Operations: docs/operations.md
       - Validation: docs/validation.md
       - Prompt Engineering: docs/prompt-engineering.md
+      - Future HITL Tooling: docs/future-hitl.md
       - Glossary: docs/glossary.md
       - References: docs/references.md
   - Blueprints:

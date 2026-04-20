@@ -87,41 +87,41 @@ All four live tests were green at the most recent probe
 ## Live RSS coverage
 
 `apps/kfish-core/tests/test_news_live.py` (`-m network`) probes every
-canonical feed. Seven green at 2026-04-20:
+canonical feed. **Six RSS feeds green at 2026-04-20; Naver API row is
+gated on developer-app credentials (pending registration).**
 
 | Source | URL | Status |
 |---|---|---|
-| yonhap | `/RSS/economy.xml` | ✅ 200 |
-| yonhap_econ | `/RSS/news.xml` | ✅ 200 |
-| hankyoreh | `/rss` (no trailing slash — the old `/rss/` 308-redirects) | ✅ 200 |
-| blockmedia | `/feed` | ✅ 200 |
-| dailynk | `/feed` | ✅ 200 |
-| donga | `/rss/…` | ✅ 200 |
-| naver (gated on credentials) | api | ✅ 200 when keys present |
+| yonhap | `yna.co.kr/rss/news.xml` | ✅ 200 |
+| yonhap_econ | `yna.co.kr/rss/economy.xml` | ✅ 200 |
+| hankyoreh | `hani.co.kr/rss` (no trailing slash — the old `/rss/` 308-redirects) | ✅ 200 |
+| blockmedia | `blockmedia.co.kr/feed` | ✅ 200 |
+| dailynk | `dailynk.com/feed/` | ✅ 200 |
+| donga | `rss.donga.com/total.xml` | ✅ 200 |
+| naver (API, gated on credentials) | `naveropenapi…` | ⏸ pending registration |
 
 See [News Scraper status](../progress/news-scraper.md) for the full live run.
 
 ## Unit-test inventory
 
-As of 2026-04-20, **138 unit tests** on the active workspace:
+As of 2026-04-20, **138 unit tests** collected across the active
+workspace (confirmed via `pytest --collect-only`):
 
-| Module | Count |
+| Package | Count |
 |---|---|
-| `test_agents.py` | 8 |
-| `test_brier.py` | 5 |
-| `test_brier_sql.py` | 3 |
-| `test_conformal.py` | 7 |
-| `test_ensemble.py` | 6 |
-| `test_ingest_articles.py` | 7 |
-| `test_isotonic.py` | 5 |
-| `test_markets.py` | 4 |
-| `test_news.py` | 5 |
-| `test_news_search.py` | 7 |
-| `test_market_input_prompt.py` | 4 |
-| `test_pipeline_ingest.py` | 5 |
-| `test_brier_cutover.py` | 4 |
-| `test_refit.py` | 3 |
-| *(kfish-common)* | ~65 |
+| `apps/kfish-core/tests/` | 71 |
+| `apps/hypekr-bot/tests/` | 36 |
+| `packages/kfish-common/tests/` | 27 |
+| `tests/` (repo root, e.g. `test_brier_cutover.py`) | 4 |
+| **total** | **138** |
+
+Run with:
+
+```bash
+uv run pytest apps/ packages/ tests/test_brier_cutover.py \
+  --ignore=apps/kfish-core/tests/test_news_live.py \
+  --ignore=apps/kfish-core/tests/test_live_apis.py -q
+```
 
 The single pre-existing failure in `tests/unit/test_calibration_v2.py`
 is in the legacy `src/prediction/` engine, not the new workspace;

@@ -1,3 +1,8 @@
+---
+title: Swarm Architecture
+description: 9 personas, 3-Fish pre-screen, Delphi rounds, aggregation
+---
+
 # 9-persona Swarm Architecture
 
 K-Fish generates a single probability per market by running nine LLM

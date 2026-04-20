@@ -5,6 +5,12 @@ description: How 9 personas become a calibrated probability
 
 # Swarm + calibration
 
+!!! tip "See also"
+    For the math, the persona list, and the round-by-round Delphi
+    protocol, see the Docs tab: [Swarm Architecture](../docs/swarm.md)
+    and [Calibration Stack](../docs/calibration.md). This page is the
+    architectural summary; those pages are the reference.
+
 ## End-to-end data flow
 
 ```mermaid

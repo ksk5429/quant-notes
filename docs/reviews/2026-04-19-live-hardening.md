@@ -13,7 +13,9 @@ Write the blueprint-driven production build, then harden it.
 
 After the production build, spawned two independent review agents
 (`code-reviewer`, `security-reviewer`) plus my own coverage / pyright /
-secret-scan pass. They flagged 18 issues across CRITICAL / HIGH / MEDIUM / LOW.
+secret-scan pass. They surfaced 15 distinct items across CRITICAL / HIGH /
+MEDIUM / LOW (several agent-reported items bundled where a single fix
+resolved more than one finding).
 
 Fixed every single one. Summary table:
 

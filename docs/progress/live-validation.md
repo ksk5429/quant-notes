@@ -77,4 +77,7 @@ pytest -m network apps/kfish-core/tests/test_live_apis.py::test_uma_goldsky_oov2
 pytest -m network apps/kfish-core/tests/test_live_apis.py::test_uma_goldsky_moov2_live_returns_polymarket_requests
 ```
 
-All 4 tests green as of 2026-04-19.
+All 4 tests green as of 2026-04-19. The fourth test
+(`test_request_to_events_flattens_lifecycle`) exercises the
+request-to-events flattening on live Goldsky output so a schema change
+upstream is caught before the nightly pipeline hits it.

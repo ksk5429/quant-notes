@@ -1,3 +1,8 @@
+---
+title: News Pipeline
+description: RSS + Naver ingestion, SimHash-64 dedup, Kiwi tokenization, BM25 retrieval
+---
+
 # News Pipeline
 
 The news pipeline supplies the swarm with recent, deduplicated, Korean-source

@@ -77,10 +77,14 @@ uv run --package kfish-core kfish-scan --min-volume 100000 --limit 10
 ## 6. Run one news-ingestion pass
 
 ```bash
-# RSS-only, no translation. Works with zero credentials.
-uv run --package kfish-core kfish-news --dry-run --stats
+# Plan only — no HTTP calls, no DB writes, no credentials needed.
+uv run --package kfish-core kfish-news --dry-run
 
-# Full pass including cheap title translation (Papago, ~₩60):
+# Warehouse stats — requires prior `kfish-migrate` and, ideally, at
+# least one real ingestion run so the tables aren't empty.
+uv run --package kfish-core kfish-news --stats
+
+# Full pass including cheap title translation (Papago, ~₩60/run):
 uv run --package kfish-core kfish-news
 ```
 
@@ -90,7 +94,7 @@ via [`runbooks/scraper-ops.md`](https://github.com/ksk5429/kfish/blob/main/runbo
 ## 7. Verify everything
 
 ```bash
-# Unit tests (131 as of 2026-04-20):
+# Unit tests (138 as of 2026-04-20):
 uv run pytest apps/ packages/
 
 # Ruff + pyright:

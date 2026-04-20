@@ -88,9 +88,11 @@ variant (IVAP) from [Vovk 2015].
 `premortem`) sampled once each. If all land within 0.05 of 0.50, the
 market is declared *unknowable* and skipped. News-free by design.
 
-**9-persona swarm** — The nine personas that run the full Delphi: bear,
-bull, contrarian, inside_view, outside_view, premortem, reference_class,
-superforecaster, skeptic. Weighted by category.
+**9-persona swarm** — The nine personas that run the full Delphi:
+`contrarian`, `inside_view`, `outside_view`, `premortem`,
+`devils_advocate`, `quant`, `geopolitical`, `macro`, `red_team`. Defined
+in `apps/kfish-core/src/kfish_core/agents/personas.py`; weighted by
+category at aggregation time.
 
 **Asymmetric extremization** — See → Extremization.
 

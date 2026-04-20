@@ -1,3 +1,8 @@
+---
+title: Theory and Math
+description: Brier score, Murphy decomposition, extremization, calibration metrics
+---
+
 # Theory and Math
 
 This document states the scoring rules and calibration metrics that the K-Fish

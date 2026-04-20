@@ -30,6 +30,7 @@ and the [architectural decision records](../architecture/adrs.md).
 | Operate the stack | [Operations](operations.md) |
 | Audit forecast quality | [Validation](validation.md) |
 | Read/modify prompts | [Prompt Engineering](prompt-engineering.md) |
+| Add a human-review loop | [Future HITL Tooling](future-hitl.md) |
 | Look up a term | [Glossary](glossary.md) |
 | Find the papers | [References](references.md) |
 
