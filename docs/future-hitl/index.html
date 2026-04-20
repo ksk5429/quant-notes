@@ -6,19 +6,19 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Prediction-market, calibration, and K-Fish-specific terms">
+        <meta name="description" content="Shippable human-in-the-loop tools and integration paths for the K-Fish forecasting stack">
       
       
         <meta name="author" content="Kyeong Sun Kim">
       
       
-        <link rel="canonical" href="https://ksk5429.github.io/quant-notes/docs/glossary/">
+        <link rel="canonical" href="https://ksk5429.github.io/quant-notes/docs/future-hitl/">
       
       
-        <link rel="prev" href="../future-hitl/">
+        <link rel="prev" href="../prompt-engineering/">
       
       
-        <link rel="next" href="../references/">
+        <link rel="next" href="../glossary/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>Glossary - K-Fish Quant Notes</title>
+        <title>Future HITL Tooling - K-Fish Quant Notes</title>
       
     
     
@@ -115,7 +115,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#glossary" class="md-skip">
+        <a href="#future-hitl-tooling" class="md-skip">
           Skip to content
         </a>
       
@@ -149,7 +149,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Glossary
+              Future HITL Tooling
             
           </span>
         </div>
@@ -849,34 +849,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../future-hitl/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Future HITL Tooling
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -896,7 +868,7 @@
   <span class="md-ellipsis">
     
   
-    Glossary
+    Future HITL Tooling
   
 
     
@@ -914,7 +886,7 @@
   <span class="md-ellipsis">
     
   
-    Glossary
+    Future HITL Tooling
   
 
     
@@ -940,10 +912,343 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prediction-markets" class="md-nav__link">
+  <a href="#1-visual-ui-annotation-for-vibe-coded-surfaces" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Prediction markets
+        1. Visual UI annotation for vibe-coded surfaces
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Visual UI annotation for vibe-coded surfaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vibe-annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vibe Annotations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-scientific-figure-review-the-calibration-plot-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Scientific figure review (the calibration-plot problem)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Scientific figure review (the calibration-plot problem)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#figurefirst" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FigureFirst
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scientific-inkscape" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scientific Inkscape
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#claude-vision-as-fast-path-reviewer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Claude vision as fast-path reviewer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-human-annotation-queues-for-llm-traces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Human annotation queues for LLM traces
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Human annotation queues for LLM traces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#langfuse-annotation-queues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Langfuse Annotation Queues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#langsmith-annotation-queues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LangSmith Annotation Queues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#argilla" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Argilla
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#label-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Label Studio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sunset-note-humanloop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sunset note: Humanloop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commercial-data-labeling-for-completeness-not-recommended-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commercial data labeling (for completeness, not recommended here)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-mcp-servers-that-implement-review-queues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. MCP servers that implement review queues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. MCP servers that implement review queues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#human-in-the-loop-mcp-server-gongrzhe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Human-In-the-Loop MCP Server (GongRzhe)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interactive-mcp-ttommyth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        interactive-mcp (ttommyth)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agentrq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AgentRQ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mcp-elicitation-native" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MCP Elicitation (native)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#claude-agent-sdk-canusetool-callback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Claude Agent SDK canUseTool callback
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-screenshot-canvas-annotation-diagram-heavy-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Screenshot + canvas annotation (diagram-heavy review)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Screenshot + canvas annotation (diagram-heavy review)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tldraw-chat-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        tldraw chat template
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#excalidraw-mcp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Excalidraw MCP server
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#synthesis-three-highest-leverage-hitl-insertion-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synthesis: three highest-leverage HITL insertion points
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Synthesis: three highest-leverage HITL insertion points">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#leverage-point-1-cutover-gate-between-legacy-engine-and-new-workspace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Leverage point 1 - Cutover gate between legacy engine and new workspace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leverage-point-2-persona-reasoning-review-for-the-9-fish-swarm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Leverage point 2 - Persona reasoning review for the 9-Fish swarm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leverage-point-3-paper-to-live-trade-preflight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Leverage point 3 - Paper-to-live trade preflight
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-not-to-add" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What NOT to add
       
     </span>
   </a>
@@ -951,65 +1256,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#scoring-and-calibration" class="md-nav__link">
+  <a href="#implementation-sequencing" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Scoring and calibration
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#swarm" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Swarm
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#data" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Data
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Operations
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#k-fish-specific" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        K-Fish-specific
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#r-series-rules" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        R-series rules
+        Implementation sequencing
       
     </span>
   </a>
@@ -1020,6 +1270,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1944,10 +2222,343 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prediction-markets" class="md-nav__link">
+  <a href="#1-visual-ui-annotation-for-vibe-coded-surfaces" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Prediction markets
+        1. Visual UI annotation for vibe-coded surfaces
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Visual UI annotation for vibe-coded surfaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vibe-annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vibe Annotations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-scientific-figure-review-the-calibration-plot-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Scientific figure review (the calibration-plot problem)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Scientific figure review (the calibration-plot problem)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#figurefirst" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FigureFirst
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scientific-inkscape" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scientific Inkscape
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#claude-vision-as-fast-path-reviewer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Claude vision as fast-path reviewer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-human-annotation-queues-for-llm-traces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Human annotation queues for LLM traces
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Human annotation queues for LLM traces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#langfuse-annotation-queues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Langfuse Annotation Queues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#langsmith-annotation-queues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LangSmith Annotation Queues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#argilla" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Argilla
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#label-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Label Studio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sunset-note-humanloop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sunset note: Humanloop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commercial-data-labeling-for-completeness-not-recommended-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commercial data labeling (for completeness, not recommended here)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-mcp-servers-that-implement-review-queues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. MCP servers that implement review queues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. MCP servers that implement review queues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#human-in-the-loop-mcp-server-gongrzhe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Human-In-the-Loop MCP Server (GongRzhe)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interactive-mcp-ttommyth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        interactive-mcp (ttommyth)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agentrq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AgentRQ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mcp-elicitation-native" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MCP Elicitation (native)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#claude-agent-sdk-canusetool-callback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Claude Agent SDK canUseTool callback
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-screenshot-canvas-annotation-diagram-heavy-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Screenshot + canvas annotation (diagram-heavy review)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Screenshot + canvas annotation (diagram-heavy review)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tldraw-chat-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        tldraw chat template
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#excalidraw-mcp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Excalidraw MCP server
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#synthesis-three-highest-leverage-hitl-insertion-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synthesis: three highest-leverage HITL insertion points
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Synthesis: three highest-leverage HITL insertion points">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#leverage-point-1-cutover-gate-between-legacy-engine-and-new-workspace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Leverage point 1 - Cutover gate between legacy engine and new workspace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leverage-point-2-persona-reasoning-review-for-the-9-fish-swarm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Leverage point 2 - Persona reasoning review for the 9-Fish swarm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leverage-point-3-paper-to-live-trade-preflight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Leverage point 3 - Paper-to-live trade preflight
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-not-to-add" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What NOT to add
       
     </span>
   </a>
@@ -1955,65 +2566,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#scoring-and-calibration" class="md-nav__link">
+  <a href="#implementation-sequencing" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Scoring and calibration
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#swarm" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Swarm
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#data" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Data
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Operations
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#k-fish-specific" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        K-Fish-specific
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#r-series-rules" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        R-series rules
+        Implementation sequencing
       
     </span>
   </a>
@@ -2088,158 +2644,392 @@
   
 
 
-<h1 id="glossary">Glossary<a class="headerlink" href="#glossary" title="Permanent link">&para;</a></h1>
-<p>Terms used throughout the K-Fish documentation. Cross-references use
-<code>→ Term</code>.</p>
-<h2 id="prediction-markets">Prediction markets<a class="headerlink" href="#prediction-markets" title="Permanent link">&para;</a></h2>
-<p><strong>Binary market</strong> — A market that resolves to 0 (NO) or 1 (YES) at a
-specified time per a written resolution source.</p>
-<p><strong>CLOB</strong> — Central Limit Order Book. Polymarket's order-matching venue
-for binary outcomes. Opposite of a constant-function market maker.</p>
-<p><strong>Crowd probability</strong> — The market price of the YES share, interpreted
-as a probability. The benchmark for → BSS on prediction markets. Current
-K-Fish baseline: Brier 0.206 vs crowd 0.084 (crowd is winning).</p>
-<p><strong>Edge (bps)</strong> — Signed difference between our calibrated probability
-and the market price, in basis points: <code>10000 × (p − price)</code>.</p>
-<p><strong>Gamma</strong> — Polymarket's read-only REST API for market metadata
-(questions, slugs, resolution sources, volume).</p>
-<p><strong>HIP-4</strong> — Hyperliquid Improvement Proposal 4. Binary perpetuals on
-Hyperliquid. Not live on mainnet as of 2026-04-20; K-Fish HL handlers
-feature-gated to testnet.</p>
-<p><strong>Oracle (UMA)</strong> — Decentralized dispute resolution for Polymarket.
-Proposers post a price; bonders dispute; the DAO settles. K-Fish tracks
-all four events → ProposePrice / DisputePrice / Settle / Reset.</p>
-<p><strong>Resolution</strong> — The event that terminates a market; <code>outcome ∈ {0, 1}</code>
-plus <code>resolved_at</code> timestamp.</p>
-<h2 id="scoring-and-calibration">Scoring and calibration<a class="headerlink" href="#scoring-and-calibration" title="Permanent link">&para;</a></h2>
-<p><strong>Brier score</strong> — Quadratic scoring rule:
-<span class="arithmatex">\(\text{Brier} = \frac{1}{N} \sum_i (p_i - y_i)^2\)</span>. Lower is better.
-0.25 is random on binary questions. Formally defined in → Murphy
-decomposition.</p>
-<p><strong>BSS (Brier Skill Score)</strong> — Normalized improvement vs a baseline:
-<span class="arithmatex">\(\text{BSS} = 1 - B / B_{\text{ref}}\)</span>. Current K-Fish: BSS +17.6 %
-vs random, −145 % vs crowd.</p>
-<p><strong>Calibration</strong> — The property that, among forecasts assigned
-probability <span class="arithmatex">\(p\)</span>, a fraction <span class="arithmatex">\(p\)</span> actually occur. Measured by → ECE and
-the reliability term of the → Murphy decomposition.</p>
-<p><strong>Climatology</strong> — The unconditional base rate used as a calibration
-baseline (usually 0.5 on uniform binary markets).</p>
-<p><strong>Discrimination</strong> — The ability to separate events from non-events.
-Captured by the resolution term of the → Murphy decomposition.</p>
-<p><strong>ECE (Expected Calibration Error)</strong> — Bucketed calibration gap:
-<span class="arithmatex">\(\text{ECE} = \sum_b \frac{n_b}{N}\,|\bar{p}_b - \bar{y}_b|\)</span>. Bin count
-matters; K-Fish uses 10 bins for legacy parity.</p>
-<p><strong>Extremization</strong> — Pushing an aggregate probability away from 0.5.
-K-Fish uses the asymmetric formula from [Baron 2014]: more aggressive
-when the swarm agrees, less when it disagrees.</p>
-<p><strong>Isotonic regression</strong> — Monotone-non-decreasing fit to calibration
-data. Piecewise-constant. Trained via PAV algorithm.</p>
-<p><strong>Mondrian conformal</strong> — Conformal prediction stratified by a
-category variable. K-Fish stratifies by <code>(category, true_class)</code> so
-per-class coverage holds independently.</p>
-<p><strong>Murphy decomposition</strong> — <span class="arithmatex">\(\text{Brier} = \text{reliability} -
-\text{resolution} + \text{uncertainty}\)</span> ([Murphy 1973]). Reliability:
-calibration error. Resolution: discrimination. Uncertainty: variance
-of <span class="arithmatex">\(y\)</span>.</p>
-<p><strong>Venn-Abers predictor</strong> — A conformal calibrator that returns
-intervals <span class="arithmatex">\([p_0, p_1]\)</span> with provable coverage. K-Fish uses the inductive
-variant (IVAP) from [Vovk 2015].</p>
-<h2 id="swarm">Swarm<a class="headerlink" href="#swarm" title="Permanent link">&para;</a></h2>
-<p><strong>3-Fish pre-screen</strong> — Three personas (<code>inside_view</code>, <code>outside_view</code>,
-<code>premortem</code>) sampled once each. If all land within 0.05 of 0.50, the
-market is declared <em>unknowable</em> and skipped. News-free by design.</p>
-<p><strong>9-persona swarm</strong> — The nine personas that run the full Delphi:
-<code>contrarian</code>, <code>inside_view</code>, <code>outside_view</code>, <code>premortem</code>,
-<code>devils_advocate</code>, <code>quant</code>, <code>geopolitical</code>, <code>macro</code>, <code>red_team</code>. Defined
-in <code>apps/kfish-core/src/kfish_core/agents/personas.py</code>; weighted by
-category at aggregation time.</p>
-<p><strong>Asymmetric extremization</strong> — See → Extremization.</p>
-<p><strong>Delphi rounds</strong> — Iterated forecasting with opaque per-round ID
-shuffle. Each persona sees anonymized prior-round peer probabilities;
-terminates on convergence (absolute spread ≤ ε) or stall + low-variance.</p>
-<p><strong>Persona</strong> — A system prompt prefix that gives a base model a specific
-analytical style. K-Fish uses nine; see <a href="../swarm/">Swarm Architecture</a>.</p>
-<h2 id="data">Data<a class="headerlink" href="#data" title="Permanent link">&para;</a></h2>
-<p><strong>ASOF JOIN</strong> — DuckDB's temporal join returning the most-recent row
-at-or-before each probe timestamp. O(n log n) vs naive O(n²).</p>
-<p><strong>Calibration row</strong> — Tuple <code>(decision_id, ts, prob, outcome)</code> feeding
-→ Brier and → ECE. Exposed as the <code>kfish.calibration_rows</code> view.</p>
-<p><strong>FTS (Full-Text Search)</strong> — DuckDB extension providing BM25 over text
-columns. Built lazily on <code>kfish.articles</code> via
-<code>fts_kfish_articles.match_bm25</code>.</p>
-<p><strong>Kiwi</strong> — Korean morphological analyzer (<code>kiwipiepy</code>). Produces
-part-of-speech-tagged tokens; K-Fish keeps <code>NNG/NNP/VV/VA/MAG/MAJ/SL/SN</code>
-in <code>body_ko_tokens</code> for BM25.</p>
-<p><strong>SimHash-64</strong> — [Charikar 2002] locality-sensitive hash. K-Fish
-fingerprints article title+lead; Hamming distance ≤ 4 within a 48h
-window marks a duplicate.</p>
-<h2 id="operations">Operations<a class="headerlink" href="#operations" title="Permanent link">&para;</a></h2>
-<p><strong>Cutover gate</strong> — See → Math-parity gate. The current ADR-0002 gate.
-Renamed explicitly so it isn't mistaken for forecast parity on fresh
-markets.</p>
-<p><strong>Langfuse</strong> — Open-source LLM observability. K-Fish self-hosts on
-Oracle A1 (ADR-0007) so trading traces never leave in-house infra.</p>
-<p><strong>Math-parity gate</strong> — Seven consecutive UTC-day passes where the
-new numpy Brier matches the legacy engine's stored Brier within 0.002
-on archived retrodiction JSON.</p>
-<p><strong>Papago</strong> — Naver's machine translator. K-Fish uses it for cheap
-title-only translation (~₩60/run) to populate <code>title_en</code> for BM25
-queries in English.</p>
-<p><strong>uv workspace</strong> — Rust-based Python package manager. K-Fish uses it
-to manage the monorepo (ADR-0006).</p>
-<h2 id="k-fish-specific">K-Fish-specific<a class="headerlink" href="#k-fish-specific" title="Permanent link">&para;</a></h2>
-<p><strong>hypekr-bot</strong> — The private Telegram bot on Hyperliquid.
-<code>apps/hypekr-bot/</code>.</p>
-<p><strong>kfish-common</strong> — Shared utilities package: DuckDB client, Langfuse
-wrapper, LLM router, config. <code>packages/kfish-common/</code>.</p>
-<p><strong>kfish-core</strong> — The 9-agent swarm, calibration, markets, news,
-pipeline, CLI. <code>apps/kfish-core/</code>.</p>
-<p><strong>polymarket-oracle-risk</strong> — The MIT-licensed public Bayesian risk
-scorer. <code>polymarket-oracle-risk/</code>.</p>
-<h2 id="r-series-rules">R-series rules<a class="headerlink" href="#r-series-rules" title="Permanent link">&para;</a></h2>
-<p>The project rules enumerated in <code>CLAUDE.md</code>:</p>
-<table>
-<thead>
-<tr>
-<th>Rule</th>
-<th>Short form</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>R1</td>
-<td>Source verification — no hallucinated citations</td>
-</tr>
-<tr>
-<td>R2</td>
-<td>Paper trading first</td>
-</tr>
-<tr>
-<td>R3</td>
-<td>Interpretability — reasoning chain required</td>
-</tr>
-<tr>
-<td>R4</td>
-<td>Calibration mandatory — raw LLM probs never used</td>
-</tr>
-<tr>
-<td>R5</td>
-<td>Human-AI boundary — final approval is human</td>
-</tr>
-<tr>
-<td>R6</td>
-<td>Grounded in literature</td>
-</tr>
-<tr>
-<td>R7</td>
-<td>ADR discipline — immutable except for <code>status:</code></td>
-</tr>
-<tr>
-<td>R8</td>
-<td>License boundary — nothing public imports private</td>
-</tr>
-</tbody>
-</table>
+<h1 id="future-hitl-tooling">Future HITL tooling<a class="headerlink" href="#future-hitl-tooling" title="Permanent link">&para;</a></h1>
+<p>K-Fish is compounding infrastructure, and compounding stops the moment a silent
+miscalibration, a hallucinated news item, or a half-approved trade slips past
+the developer. Claude Code is fast but blind to three things: what a chart
+actually looks like after a layout change, what an expert forecaster thinks of
+a persona's reasoning trace, and whether a live trade is <em>actually</em> ready.
+This page surveys the real, shippable HITL tools that would close those gaps,
+with concrete integration paths into the existing workspace
+(<code>apps/kfish-core/</code>, <code>packages/kfish-common/</code>, <code>hypekr-bot/</code>, <code>dbt_kfish/</code>).</p>
+<div class="admonition note">
+<p class="admonition-title">Scope</p>
+<p>Every tool below is either open-source or has a usable free tier. No
+enterprise-only platforms, no vaporware. Where a tool has been sunset
+(Humanloop) it is called out. All URLs were verified in April 2026.</p>
+</div>
+<h2 id="1-visual-ui-annotation-for-vibe-coded-surfaces">1. Visual UI annotation for vibe-coded surfaces<a class="headerlink" href="#1-visual-ui-annotation-for-vibe-coded-surfaces" title="Permanent link">&para;</a></h2>
+<h3 id="vibe-annotations">Vibe Annotations<a class="headerlink" href="#vibe-annotations" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>URL:</strong> <a href="https://www.vibe-annotations.com/">vibe-annotations.com</a> -
+  <a href="https://github.com/RaphaelRegnier/vibe-annotations">GitHub: RaphaelRegnier/vibe-annotations</a> -
+  <a href="https://chromewebstore.google.com/detail/vibe-annotations-visual-f/gkofobaeeepjopdpahbicefmljcmpeof">Chrome Web Store listing</a></li>
+<li><strong>One-liner:</strong> Browser extension + local MCP server that lets you click any
+  DOM element on a running app, type a note, and have Claude Code read and act
+  on the annotation as structured context.</li>
+<li><strong>Fit:</strong> The <code>hypekr-bot/</code> Telegram Mini App and any Streamlit/Gradio
+  calibration dashboard developed around <code>apps/kfish-core/calibration/</code> both
+  run on localhost during development. Annotating "this Brier-by-bucket chart
+  is flipped on the y-axis" or "the confidence-band legend overlaps the 80%
+  bin" and letting Claude Code pick up the DOM selectors is faster than
+  screenshot-and-describe. Batches up to 200 annotations across routes in one
+  run.</li>
+<li><strong>Integration complexity:</strong> Low. Install extension, run <code>npx vibe-annotations-mcp</code>,
+  add to <code>.mcp.json</code>, done. Works on localhost and <code>file://</code> pages with no
+  account or tracking.</li>
+<li><strong>License:</strong> Free, open-source (AGPL-like per repo). No cloud dependency.</li>
+</ul>
+<h3 id="agentation">Agentation<a class="headerlink" href="#agentation" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>URL:</strong> <a href="https://www.agentation.com/mcp">agentation.com/mcp</a> -
+  <a href="https://www.producthunt.com/products/agentation">Product Hunt launch (March 27, 2026, #1 day)</a></li>
+<li><strong>One-liner:</strong> Desktop overlay tool that captures CSS selectors, React
+  component names, computed styles, and a human note, and exposes them through
+  an MCP server so coding agents can <code>read</code>, <code>acknowledge</code>, <code>reply</code>, <code>resolve</code>,
+  and <code>watch</code> annotations.</li>
+<li><strong>Fit:</strong> Agentation's two-way protocol is the stronger bet for the Telegram
+  Mini App flow, because the agent can mark annotations <code>resolved</code> when a fix
+  lands - creating an auditable trail that maps to the commit. Useful during
+  the HIP-4 handler build-out when the bot UI is iterated tightly against
+  design review.</li>
+<li><strong>Integration complexity:</strong> Low-medium. The MCP server (<code>agentation-mcp</code>)
+  ships as an npm package; free for personal use.</li>
+<li><strong>License:</strong> Proprietary desktop app with a free tier; MCP bridge open per
+  the product page.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Pick one, not both</p>
+<p>Vibe Annotations is simpler and truly OSS. Agentation has the nicer
+two-way agent lifecycle. For a solo INTJ workflow, Vibe Annotations wins
+on minimalism; Agentation wins if you ever add a second reviewer.</p>
+</div>
+<h2 id="2-scientific-figure-review-the-calibration-plot-problem">2. Scientific figure review (the calibration-plot problem)<a class="headerlink" href="#2-scientific-figure-review-the-calibration-plot-problem" title="Permanent link">&para;</a></h2>
+<h3 id="figurefirst">FigureFirst<a class="headerlink" href="#figurefirst" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>URL:</strong> <a href="https://figurefirst.readthedocs.io/en/latest/">figurefirst.readthedocs.io</a> -
+  <a href="https://github.com/FlyRanch/figurefirst">GitHub: FlyRanch/figurefirst</a> -
+  <a href="https://proceedings.scipy.org/articles/shinma-7f4c6e7-009">SciPy 2017 paper</a></li>
+<li><strong>One-liner:</strong> Python library that lets you author SVG layouts in Inkscape
+  and populate named <code>&lt;rect&gt;</code> placeholders with matplotlib axes, so figure
+  layout and data generation stay synchronized across iterations.</li>
+<li><strong>Fit:</strong> The Brier reliability diagram, ECE-by-category plot, and PIT
+  histogram that gate every cutover (<code>apps/kfish-core/calibration/plots.py</code>)
+  are the highest-stakes artifacts in the repo - they are the reason a model
+  ships or doesn't. FigureFirst lets you fix the layout once, then re-run
+  <code>uv run kfish-retrodict &amp;&amp; uv run python -m kfish_core.calibration.figures</code>
+  and have every panel re-populate in place. The human reviewer marks up the
+  Inkscape SVG (adds callouts, repositions panels) without ever having to
+  touch matplotlib rcParams. The data layer regenerates; the annotation layer
+  persists.</li>
+<li><strong>Integration complexity:</strong> Medium. Requires restructuring <code>plots.py</code> to
+  load a <code>layout.svg</code>, call <code>figurefirst.FigureLayout(...)</code>, and route each
+  <code>fig.axes_by_name(...)</code> to an existing matplotlib call.</li>
+<li><strong>License:</strong> BSD-3. Free.</li>
+</ul>
+<h3 id="scientific-inkscape">Scientific Inkscape<a class="headerlink" href="#scientific-inkscape" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>URL:</strong> <a href="https://github.com/burghoff/Scientific-Inkscape">GitHub: burghoff/Scientific-Inkscape</a></li>
+<li><strong>One-liner:</strong> Inkscape extension suite whose Scaler preserves text and tick
+  positioning while resizing only the plot area - critical for assembling
+  multi-panel figures from matplotlib SVGs without typography drift.</li>
+<li><strong>Fit:</strong> Paired with FigureFirst. When Claude generates a new reliability
+  diagram that needs to go into a 3-panel figure next to the PIT histogram and
+  the ECE bar chart, the Scaler extension resizes each panel without breaking
+  the axis labels. Use before every ADR referencing a calibration metric.</li>
+<li><strong>Integration complexity:</strong> Low. Drop extensions into the Inkscape user
+  extensions folder, restart.</li>
+<li><strong>License:</strong> Apache 2.0. Free.</li>
+</ul>
+<h3 id="claude-vision-as-fast-path-reviewer">Claude vision as fast-path reviewer<a class="headerlink" href="#claude-vision-as-fast-path-reviewer" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>URL:</strong> <a href="https://docs.claude.com/en/docs/build-with-claude/vision">Vision docs</a> -
+  <a href="https://platform.claude.com/docs/en/about-claude/pricing">Pricing</a></li>
+<li><strong>One-liner:</strong> Every current Claude model (Haiku 4.5, Sonnet 4.6, Opus 4.7)
+  accepts image input via the Messages API using <code>base64</code>, <code>url</code>, or Files API
+  <code>file_id</code> sources, with <code>image/jpeg</code>, <code>image/png</code>, <code>image/gif</code>, and
+  <code>image/webp</code> supported up to 8000x8000 px.</li>
+<li><strong>Fit:</strong> Before a human sits down to annotate a reliability diagram, run
+  Haiku 4.5 over the PNG with a structured prompt: "List every axis
+  mislabeling, every bin with coverage inversion, every legend-data overlap."
+  This catches ~80% of mechanical defects at ~$1/MTok input. Use Opus 4.7 for
+  substantive critiques of the shape (overconfidence at tails, step function
+  in isotonic fit). <strong>Caveat:</strong> Claude is explicitly documented as <em>not</em>
+  reliable for extracting precise numeric values from image-only charts;
+  always pair image review with the underlying Parquet/CSV.</li>
+<li><strong>Integration complexity:</strong> Low. Already available in <code>kfish-common/llm</code>.</li>
+<li><strong>License:</strong> Commercial. Image tokenization is billed against input tokens;
+  Opus 4.7 can consume ~3x more tokens per high-resolution image than older
+  models, so downsample to 1024px before sending unless fidelity matters.</li>
+</ul>
+<h2 id="3-human-annotation-queues-for-llm-traces">3. Human annotation queues for LLM traces<a class="headerlink" href="#3-human-annotation-queues-for-llm-traces" title="Permanent link">&para;</a></h2>
+<h3 id="langfuse-annotation-queues">Langfuse Annotation Queues<a class="headerlink" href="#langfuse-annotation-queues" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>URL:</strong> <a href="https://langfuse.com/docs/evaluation/evaluation-methods/annotation-queues">langfuse.com/docs/evaluation/evaluation-methods/annotation-queues</a> -
+  <a href="https://langfuse.com/pricing-self-host">Self-hosted pricing</a> -
+  <a href="https://langfuse.com/self-hosting/deployment/docker-compose">Docker Compose deployment</a></li>
+<li><strong>One-liner:</strong> Self-hostable LLM observability platform with first-class
+  annotation queues - create a queue, push traces/observations/sessions into
+  it, define a score config, and review with the built-in UI or a
+  <a href="https://langfuse.com/changelog/2025-03-13-public-api-annotation-queues">public API</a>.</li>
+<li><strong>Fit:</strong> This is already the chosen spine per
+  <a href="https://github.com/ksk5429/kfish/blob/main/docs/decisions/0007-self-hosted-langfuse-oracle-a1.md">ADR-0007</a>.
+  The 9-Fish swarm emits one trace per persona per market; pipe the
+  high-disagreement traces (swarm variance &gt; 0.15) into a "persona-review"
+  queue with a score config of <code>{reasoning_quality: 1-5, citation_valid: bool,
+  hallucination: bool}</code>. Review 10-20 traces per week during quiet periods
+  and use the resulting labels to fine-tune persona prompts. All core features
+  free when self-hosted on Oracle A1 - no feature gating.</li>
+<li><strong>Integration complexity:</strong> Low (already in ADR path). Add a nightly Python
+  job that calls <code>langfuse.create_annotation_queue_item(...)</code> against
+  <code>apps/kfish-core/pipeline/nightly.py</code> output.</li>
+<li><strong>License:</strong> MIT. Unlimited when self-hosted.</li>
+</ul>
+<h3 id="langsmith-annotation-queues">LangSmith Annotation Queues<a class="headerlink" href="#langsmith-annotation-queues" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>URL:</strong> <a href="https://docs.smith.langchain.com/evaluation/how_to_guides/human_feedback/annotation_queues">docs.smith.langchain.com/evaluation/how_to_guides/human_feedback/annotation_queues</a></li>
+<li><strong>One-liner:</strong> LangChain's proprietary observability platform with
+  single-run and pairwise annotation queue modes for human review and
+  evaluator calibration.</li>
+<li><strong>Fit:</strong> The pairwise mode is the interesting one for K-Fish - run
+  contrarian-Fish and inside-view-Fish on the same market and have the human
+  choose which reasoning chain was closer to the post-hoc resolution truth.
+  Feeds the persona-weight tuning loop.</li>
+<li><strong>Integration complexity:</strong> Medium. Requires LangSmith SDK
+  instrumentation, which overlaps with Langfuse; choose one.</li>
+<li><strong>License:</strong> Proprietary, free tier up to 5k traces/month.</li>
+</ul>
+<h3 id="argilla">Argilla<a class="headerlink" href="#argilla" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>URL:</strong> <a href="https://argilla.io/">argilla.io</a> - <a href="https://github.com/argilla-io/argilla">GitHub: argilla-io/argilla</a></li>
+<li><strong>One-liner:</strong> Open-source data curation platform purpose-built for LLM
+  feedback collection - filters, AI-suggested labels, semantic search over
+  traces.</li>
+<li><strong>Fit:</strong> Overkill for a solo operator today, but the right landing spot if a
+  second reviewer ever joins. The "Feedback" workspace is designed for
+  multi-aspect scoring (one trace, five dimensions), which maps cleanly to
+  the K-Fish persona reasoning rubric.</li>
+<li><strong>Integration complexity:</strong> Medium. Self-hosted via Docker; Hugging Face
+  Spaces deployment available.</li>
+<li><strong>License:</strong> Apache 2.0.</li>
+</ul>
+<h3 id="label-studio">Label Studio<a class="headerlink" href="#label-studio" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>URL:</strong> <a href="https://labelstud.io/">labelstud.io</a> -
+  <a href="https://humansignal.com/pricing/">HumanSignal pricing</a></li>
+<li><strong>One-liner:</strong> General-purpose open-source data labeling tool with
+  configurable LLM evaluation templates.</li>
+<li><strong>Fit:</strong> Useful specifically for the <em>news annotation</em> problem - when the
+  news retrieval pipeline surfaces an article, a human quickly labels
+  <code>{relevant: bool, sentiment: -1/0/+1, priced_in: bool}</code> to build a
+  supervised training set for the news-filter model.</li>
+<li><strong>Integration complexity:</strong> Low-medium. Docker Compose, Apache 2.0
+  community edition. Self-hosted is free (~$5-10/mo on Railway).</li>
+<li><strong>License:</strong> Apache 2.0 community; enterprise paid.</li>
+</ul>
+<h3 id="sunset-note-humanloop">Sunset note: Humanloop<a class="headerlink" href="#sunset-note-humanloop" title="Permanent link">&para;</a></h3>
+<p><a href="https://humanloop.com/">Humanloop</a> was sunset September 8, 2025 after
+Anthropic acquired the team. Any pre-2026 guide recommending it is stale.
+The replacement in that niche is Langfuse + Argilla for OSS, LangSmith for
+proprietary.</p>
+<h3 id="commercial-data-labeling-for-completeness-not-recommended-here">Commercial data labeling (for completeness, not recommended here)<a class="headerlink" href="#commercial-data-labeling-for-completeness-not-recommended-here" title="Permanent link">&para;</a></h3>
+<p><a href="https://scale.com/pricing">Scale AI / Scale Studio</a> (enterprise contracts,
+typically <span class="arithmatex">\(400k+) and [Surge AI](https://surgehq.ai/) (Anthropic's own RLHF
+vendor, revenue ~\)</span>1.2B in 2024) are the tier-1 managed-annotator platforms.
+Both are overkill for a solo quant workflow and neither has a usable free
+tier.</p>
+<h2 id="4-mcp-servers-that-implement-review-queues">4. MCP servers that implement review queues<a class="headerlink" href="#4-mcp-servers-that-implement-review-queues" title="Permanent link">&para;</a></h2>
+<h3 id="human-in-the-loop-mcp-server-gongrzhe">Human-In-the-Loop MCP Server (GongRzhe)<a class="headerlink" href="#human-in-the-loop-mcp-server-gongrzhe" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>URL:</strong> <a href="https://github.com/GongRzhe/Human-In-the-Loop-MCP-Server">GitHub: GongRzhe/Human-In-the-Loop-MCP-Server</a></li>
+<li><strong>One-liner:</strong> MCP server exposing <code>get_text_input</code>, <code>get_multi_choice</code>,
+  <code>get_multiline_input</code>, <code>confirm</code>, and <code>show_info</code> as tool calls that render
+  native GUI dialogs (Tkinter/PyQt) with configurable 5-minute timeouts.</li>
+<li><strong>Fit:</strong> The blocking dialog before a paper-trade lifts to live-trade. Claude
+  drafts a trade plan, calls <code>confirm("Lift this trade? YES/NO")</code>, and the
+  pipeline blocks until the human clicks. Enforces R2 (paper-trading default)
+  at the protocol level rather than the code level.</li>
+<li><strong>Integration complexity:</strong> Low. <code>uvx hitl-mcp-server</code>, add to <code>.mcp.json</code>.</li>
+<li><strong>License:</strong> MIT.</li>
+</ul>
+<h3 id="interactive-mcp-ttommyth">interactive-mcp (ttommyth)<a class="headerlink" href="#interactive-mcp-ttommyth" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>URL:</strong> <a href="https://github.com/ttommyth/interactive-mcp">GitHub: ttommyth/interactive-mcp</a></li>
+<li><strong>One-liner:</strong> Local, cross-platform MCP server explicitly branded as
+  "vibe coding should have human in the loop," with notification and input
+  prompting.</li>
+<li><strong>Fit:</strong> Alternative to GongRzhe's if you want a more modern UI. Same role.</li>
+<li><strong>Integration complexity:</strong> Low.</li>
+<li><strong>License:</strong> MIT.</li>
+</ul>
+<h3 id="agentrq">AgentRQ<a class="headerlink" href="#agentrq" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>URL:</strong> <a href="https://agentrq.com">agentrq.com</a> -
+  <a href="https://agentrq.com/features/mcp-integration">MCP integration</a> -
+  <a href="https://agentrq.com/docs/connect-claude-code">Connect Claude Code</a></li>
+<li><strong>One-liner:</strong> Hosted dashboard + MCP server that lets Claude Code
+  <code>createTask</code> for a human, delivers replies via Claude's native notification
+  channel in sub-second, and lets the agent resume the same session with full
+  context.</li>
+<li><strong>Fit:</strong> The right tool for asynchronous review - Claude runs the nightly
+  retrodiction at 03:00 KST, flags 5 markets with model-vs-crowd divergence
+  greater than 20%, and creates AgentRQ tasks. You review them on the phone
+  during breakfast. Claude's next session picks up the decisions without a
+  re-prompt.</li>
+<li><strong>Integration complexity:</strong> Low. Public beta, free.</li>
+<li><strong>License:</strong> Proprietary, free during beta.</li>
+</ul>
+<h3 id="mcp-elicitation-native">MCP Elicitation (native)<a class="headerlink" href="#mcp-elicitation-native" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>URL:</strong> <a href="https://claudelab.net/en/articles/claude-code/mcp-elicitation-support">MCP elicitation support (Claude Code 2.1.76+)</a> -
+  <a href="https://www.pulsemcp.com/posts/newsletter-claude-integrations-elicitations-mcp-conference">PulseMCP newsletter on elicitations</a></li>
+<li><strong>One-liner:</strong> Part of the MCP spec since late 2025 - servers can send
+  <code>elicitation/create</code> requests with a message and JSON schema, and Claude
+  Code renders an interactive form inline, blocking until the user submits.</li>
+<li><strong>Fit:</strong> This is the protocol-level way to do what GongRzhe's server does
+  in userland. If you build a <code>kfish-preflight</code> MCP server in-house (see
+  synthesis below), use elicitation rather than rolling your own Tkinter.</li>
+<li><strong>Integration complexity:</strong> Medium (building the server), low (consuming).</li>
+<li><strong>License:</strong> Protocol-level; spec is open under the MIT-licensed
+  <a href="https://github.com/modelcontextprotocol">Model Context Protocol</a>.</li>
+</ul>
+<h3 id="claude-agent-sdk-canusetool-callback">Claude Agent SDK <code>canUseTool</code> callback<a class="headerlink" href="#claude-agent-sdk-canusetool-callback" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>URL:</strong> <a href="https://docs.claude.com/en/docs/agent-sdk/permissions">Agent SDK permissions</a> -
+  <a href="https://platform.claude.com/docs/en/agent-sdk/user-input">Handle approvals and user input</a></li>
+<li><strong>One-liner:</strong> The <code>canUseTool</code> callback in the Claude Agent SDK fires
+  before any non-auto-approved tool call; returns <code>{behavior: "allow"}</code> or
+  <code>{behavior: "deny", message}</code> synchronously.</li>
+<li><strong>Fit:</strong> The finest-grained control point. Wrap
+  <code>hypekr_bot.wallet.place_order</code> as an agent tool, set deny-rule on
+  <code>place_order</code> in live mode, and route through <code>canUseTool</code> that opens a
+  console prompt or forwards to AgentRQ. Enforces R2 and R5 without modifying
+  the core bot code.</li>
+<li><strong>Integration complexity:</strong> Low if SDK is already in use.</li>
+<li><strong>License:</strong> Commercial (Claude API).</li>
+</ul>
+<h2 id="5-screenshot-canvas-annotation-diagram-heavy-review">5. Screenshot + canvas annotation (diagram-heavy review)<a class="headerlink" href="#5-screenshot-canvas-annotation-diagram-heavy-review" title="Permanent link">&para;</a></h2>
+<h3 id="tldraw-chat-template">tldraw chat template<a class="headerlink" href="#tldraw-chat-template" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>URL:</strong> <a href="https://tldraw.dev/docs/ai">tldraw.dev/docs/ai</a> -
+  <a href="https://github.com/tldraw/chat-template">GitHub: tldraw/chat-template</a> -
+  <a href="https://tldraw.dev/starter-kits/agent">Agent starter kit</a></li>
+<li><strong>One-liner:</strong> Collaborative infinite canvas with an agent starter kit that
+  sends both a PNG screenshot and structured shape data to the LLM, enabling
+  iterative "draw on this chart" review.</li>
+<li><strong>Fit:</strong> When the discussion is "should Mondrian conformal shrink more
+  aggressively in the 0.7-0.9 band?", drawing an arrow on the reliability
+  diagram is faster than typing. The agent sees the annotation as both an
+  image and a shape graph.</li>
+<li><strong>Integration complexity:</strong> Medium. React component; lift into the docs
+  site as a dedicated <code>/annotate/&lt;run_id&gt;</code> route.</li>
+<li><strong>License:</strong> Apache 2.0 (tldraw SDK has a watermark for commercial; OSS
+  version is free for this use case).</li>
+</ul>
+<h3 id="excalidraw-mcp-server">Excalidraw MCP server<a class="headerlink" href="#excalidraw-mcp-server" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>URL:</strong> <a href="https://github.com/yctimlin/mcp_excalidraw">GitHub: yctimlin/mcp_excalidraw</a></li>
+<li><strong>One-liner:</strong> MCP server around Excalidraw with <code>describe_scene</code> and
+  <code>get_canvas_screenshot</code> tools - closed feedback loop where the agent can
+  inspect and iterate on a diagram.</li>
+<li><strong>Fit:</strong> Lightweight alternative for ADR diagrams and architecture review.
+  Less relevant to calibration plots.</li>
+<li><strong>Integration complexity:</strong> Low.</li>
+<li><strong>License:</strong> MIT.</li>
+</ul>
+<h2 id="synthesis-three-highest-leverage-hitl-insertion-points">Synthesis: three highest-leverage HITL insertion points<a class="headerlink" href="#synthesis-three-highest-leverage-hitl-insertion-points" title="Permanent link">&para;</a></h2>
+<p>Not all human-AI handoffs are equal. Three points in the K-Fish workflow have
+disproportionate leverage because an error there is compounding, not linear.</p>
+<div class="admonition warning">
+<p class="admonition-title">Rank by cost of a silent miss</p>
+<p>These are ranked by <em>what a silent miss costs you over 12 months</em> - not
+by how often the decision is made.</p>
+</div>
+<h3 id="leverage-point-1-cutover-gate-between-legacy-engine-and-new-workspace">Leverage point 1 - Cutover gate between legacy engine and new workspace<a class="headerlink" href="#leverage-point-1-cutover-gate-between-legacy-engine-and-new-workspace" title="Permanent link">&para;</a></h3>
+<p><strong>Artifact:</strong> <code>apps/kfish-core/calibration/figures/reliability.svg</code> and the
+Brier/ECE numbers printed by the nightly retrodiction job in
+<code>apps/kfish-core/src/kfish_core/pipeline/nightly.py</code>.</p>
+<p><strong>Handoff:</strong> Before flipping any reader of <code>kfish-retrodict</code> away from the
+legacy <code>src.prediction</code> shim (the Phase 1 cutover rule: seven consecutive
+nightly runs within 0.002 of legacy Brier), a human eyeballs the reliability
+diagram to confirm the isotonic step function hasn't collapsed into a flat
+line and the Venn-Abers band width is non-pathological.</p>
+<p><strong>Tool stack:</strong> FigureFirst (layout-stable matplotlib) + Scientific Inkscape
+(typography-safe resize) + Claude vision (mechanical defect pre-pass with
+Haiku 4.5) + AgentRQ (async notification with attached PNG).</p>
+<p><strong>Why this matters:</strong> A silent calibration regression over seven days would
+ship bad probabilities to every downstream consumer for weeks before any
+trade-level signal caught it. This is the one gate where the human <em>must</em>
+look at the chart.</p>
+<h3 id="leverage-point-2-persona-reasoning-review-for-the-9-fish-swarm">Leverage point 2 - Persona reasoning review for the 9-Fish swarm<a class="headerlink" href="#leverage-point-2-persona-reasoning-review-for-the-9-fish-swarm" title="Permanent link">&para;</a></h3>
+<p><strong>Artifact:</strong> Langfuse traces for each Fish persona invocation, one per
+market per night. File: <code>apps/kfish-core/src/kfish_core/agents/</code> (the
+contrarian, inside-view, premortem, etc. modules).</p>
+<p><strong>Handoff:</strong> A nightly sampling rule pushes the top-5 highest-disagreement
+traces (swarm variance &gt; 0.15) into a Langfuse annotation queue. The human
+scores each on <code>{reasoning_quality 1-5, citation_valid bool, hallucination
+bool}</code>. Monthly, those labels drive (a) prompt tuning and (b) persona weight
+re-balancing in <code>apps/kfish-core/src/kfish_core/calibration/refit.py</code>.</p>
+<p><strong>Tool stack:</strong> Langfuse annotation queues (self-hosted on Oracle A1) +
+optional Argilla later if a second reviewer joins.</p>
+<p><strong>Why this matters:</strong> Baseline Brier 0.206 does <em>not</em> yet beat the crowd
+(0.084). The gap closes not by adding more Fish but by making existing
+Fish reason better. Human labels on reasoning quality are the only signal
+that tells you <em>which</em> Fish is bullshitting.</p>
+<h3 id="leverage-point-3-paper-to-live-trade-preflight">Leverage point 3 - Paper-to-live trade preflight<a class="headerlink" href="#leverage-point-3-paper-to-live-trade-preflight" title="Permanent link">&para;</a></h3>
+<p><strong>Artifact:</strong> <code>hypekr-bot/src/hypekr_bot/wallet/</code> - specifically the
+<code>place_order</code> call site and the <code>paper_trading</code> flag.</p>
+<p><strong>Handoff:</strong> Per Project Rule R2, <code>paper_trading: true</code> is default. The flip
+to live must be <em>manual, per-order</em> for the first 30 days on mainnet. Claude
+drafts the order, formats the trade plan (market, side, size, implied edge
+vs. crowd, calibrated probability, Kelly fraction, expected P&amp;L), and calls
+a <code>confirm_live_trade</code> MCP tool. The human sees the plan on mobile (AgentRQ
+notification), clicks approve, and only then does the HIP-4 handler submit.</p>
+<p><strong>Tool stack:</strong> MCP Elicitation (native, clean) or Human-In-the-Loop MCP
+Server (userland, GUI dialog) + AgentRQ for mobile reach + Claude Agent SDK
+<code>canUseTool</code> deny-rule on <code>place_order</code> as a belt-and-suspenders backup.</p>
+<p><strong>Why this matters:</strong> Revenue is builder-fee (5 bps) - a single wrong-side
+live trade at 1 ETH is worth ~$3000 in adverse fill. A protocol-level
+approval gate, reinforced by an SDK callback, is strictly safer than a
+runtime config flag anyone can flip.</p>
+<h2 id="what-not-to-add">What NOT to add<a class="headerlink" href="#what-not-to-add" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Every HITL addition has a failure mode of its own</p>
+<p>More review surface means more places to get tired and click through.</p>
+</div>
+<ul>
+<li><strong>No enterprise-managed annotation</strong> (Scale, Surge). The cost and latency
+  ruin the signal for a solo operator.</li>
+<li><strong>No CI-gated visual regression</strong> on calibration plots. Matplotlib output
+  is pixel-volatile; the review should be semantic (Claude vision +
+  human eyeball), not byte-diff.</li>
+<li><strong>No approval for read-only tools</strong> (market scan, retrodiction). Save
+  the <code>canUseTool</code> callback for operations that touch money or emit
+  public commitments (a forecast publication counts).</li>
+</ul>
+<h2 id="implementation-sequencing">Implementation sequencing<a class="headerlink" href="#implementation-sequencing" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Week 1 (free, zero-install):</strong> Turn on Langfuse annotation queues -
+   the self-hosted instance is already in the ADR path. Create the
+   <code>persona-review</code> queue. Do not try to review anything yet, just push
+   traces in.</li>
+<li><strong>Week 2 (one afternoon):</strong> Add the Human-In-the-Loop MCP server to the
+   <code>.mcp.json</code> used for the hypekr-bot dev loop. Wire the <code>confirm</code> tool
+   into <code>wallet.place_order</code>. Even in paper mode, exercise the dialog so
+   muscle memory builds.</li>
+<li><strong>Week 3 (one day):</strong> Rewrite <code>apps/kfish-core/calibration/plots.py</code> on
+   top of FigureFirst. Install Scientific Inkscape. Commit the canonical
+   <code>calibration_layout.svg</code>.</li>
+<li><strong>Week 4 (half a day):</strong> Install Vibe Annotations. Use it the next time
+   the Telegram Mini App UI needs a visual tweak. If it sticks, leave
+   it. If not, uninstall; it was zero sunk cost.</li>
+<li><strong>Later:</strong> AgentRQ for mobile async approval when the workflow actually
+   demands off-desk review (paper to live, anomalous nightly).</li>
+</ol>
+<p>The compounding argument: every tool above costs a day or less and each one
+removes a recurring friction or a silent-failure mode. None of them require
+rewriting the core. All of them respect R5 (human owns strategy, risk
+tolerance, and final trading approval).</p>
 
 
 
@@ -2272,7 +3062,7 @@ scorer. <code>polymarket-oracle-risk/</code>.</p>
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 19, 2026 23:52:02 UTC">2026-04-19</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 20, 2026 00:27:29 UTC">2026-04-20</span>
   </span>
 
     
