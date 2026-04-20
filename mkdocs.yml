@@ -131,9 +131,7 @@ nav:
       - 90-Day Build Guide: blueprints/90-day-build-guide.md
       - Three-Repo GitHub Blueprint: blueprints/three-repo-blueprint.md
   - Architecture:
-      - Overview: architecture/overview.md
       - ADRs: architecture/adrs.md
-      - Swarm + Calibration: architecture/swarm-calibration.md
       - Oracle Risk: architecture/oracle-risk.md
       - Telegram Bot: architecture/hypekr-bot.md
   - Progress:

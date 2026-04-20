@@ -42,13 +42,15 @@ Both primary planning documents are preserved verbatim and permalinkable:
 
 === "Architecture"
 
-    - [Architecture overview](architecture/overview.md)
     - [ADRs](architecture/adrs.md) — 10 decisions including DuckDB spine,
       agent-wallet custody model, Claude+OpenAI split, trunk-based signed
       commits.
-    - [Swarm + Calibration](architecture/swarm-calibration.md)
     - [Oracle Risk](architecture/oracle-risk.md)
     - [Telegram Bot](architecture/hypekr-bot.md)
+
+    For the stack overview, swarm, and calibration deep-dives, see the
+    [Docs tab](docs/index.md) — `Swarm Architecture`, `Calibration Stack`,
+    `Data Model`.
 
 === "Progress"
 

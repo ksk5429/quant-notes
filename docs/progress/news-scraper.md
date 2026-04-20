@@ -122,6 +122,6 @@ The scraper operational was the last hard dependency for **M4
 ## Related docs
 
 - [Scraper operator runbook](https://github.com/ksk5429/kfish/blob/main/runbooks/scraper-ops.md) — full ops guide in the private repo
-- [Architecture: swarm + calibration](../architecture/swarm-calibration.md) — where the news feed plugs into the forecasting loop
+- [Docs: Swarm Architecture](../docs/swarm.md) — where the news feed plugs into the forecasting loop
 - [ADR-0002: DuckDB calibration spine](../architecture/adrs.md#adr-0002) — the warehouse schema that hosts `kfish.articles`
 - [Build log](build-log.md) — the commit that shipped this

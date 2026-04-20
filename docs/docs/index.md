@@ -34,7 +34,31 @@ and the [architectural decision records](../architecture/adrs.md).
 | Look up a term | [Glossary](glossary.md) |
 | Find the papers | [References](references.md) |
 
-## Three primary products
+## The three packages at a glance
+
+```mermaid
+flowchart TB
+    subgraph private["ksk5429/kfish (private monorepo)"]
+        direction TB
+        common["packages/kfish-common<br/>DuckDB + LLM + config"]
+        core["apps/kfish-core<br/>9-agent swarm · calibration · Polymarket/UMA ingest · news"]
+        bot["apps/hypekr-bot<br/>aiogram 3 · Fernet wallets · FastAPI Mini App"]
+        common --> core
+        common --> bot
+    end
+
+    subgraph public["ksk5429/polymarket-oracle-risk (public, MIT)"]
+        analyzer["Bayesian logistic over UMA features<br/>NumPyro NUTS · subjectivity scorer · refusal gate"]
+    end
+
+    subgraph notes["ksk5429/quant-notes (this site)"]
+        pages["MkDocs Material · GitHub Pages"]
+    end
+
+    common --> public
+    core --> pages
+    bot --> pages
+```
 
 1. **DuckDB + Langfuse calibration spine** — every forecast, price, news
    item, and oracle event joins on the same UTC timeline. Core package:
