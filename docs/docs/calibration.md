@@ -28,12 +28,12 @@ Post-hoc calibration fixes both at decision time without retraining the model.
 
 ```mermaid
 flowchart LR
-    R[raw LLM prob p_llm] --> I[isotonic<br/>per category]
-    I --> V[Venn-Abers<br/>p_lo, p_mid, p_hi]
-    V --> C{Mondrian conformal<br/>singleton at alpha=0.10?}
-    C -->|set = 0,1| S[SKIP]
-    C -->|singleton| E[shrinkage ensemble<br/>alpha * p_iso + 1-alpha * p_market]
-    E --> F[p_final]
+    R["raw LLM prob p_llm"] --> I["isotonic<br/>per category"]
+    I --> V["Venn-Abers<br/>p_lo, p_mid, p_hi"]
+    V --> C{"Mondrian conformal<br/>singleton at alpha=0.10?"}
+    C -->|"set = {0,1}"| S["SKIP"]
+    C -->|"singleton"| E["shrinkage ensemble<br/>alpha * p_iso + (1 − alpha) * p_market"]
+    E --> F["p_final"]
 ```
 
 ## Isotonic regression

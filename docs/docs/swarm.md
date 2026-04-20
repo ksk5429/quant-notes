@@ -42,16 +42,16 @@ to keep model-family bias out of the consensus.
 
 ```mermaid
 flowchart TD
-    M[MarketInput] --> P{3-Fish pre-screen<br/>news-free}
-    P -->|all within 0.05 of 0.5| S[SKIP - unknowable]
-    P -->|signal detected| D0[Delphi round 0<br/>9 personas, n samples each]
-    D0 --> A0[aggregate: median of per-persona medians]
-    A0 --> C{converged?<br/>spread &lt; 0.02}
-    C -->|yes| X[asymmetric extremize]
-    C -->|no| D1[Delphi round 1<br/>opaque peer summary]
-    D1 --> A1[aggregate]
+    M["MarketInput"] --> P{"3-Fish pre-screen<br/>news-free"}
+    P -->|"all within 0.05 of 0.5"| S["SKIP — unknowable"]
+    P -->|"signal detected"| D0["Delphi round 0<br/>9 personas, n samples each"]
+    D0 --> A0["aggregate: median of per-persona medians"]
+    A0 --> C{"converged?<br/>spread less than 0.02"}
+    C -->|"yes"| X["asymmetric extremize"]
+    C -->|"no"| D1["Delphi round 1<br/>opaque peer summary"]
+    D1 --> A1["aggregate"]
     A1 --> X
-    X --> R[SwarmResult]
+    X --> R["SwarmResult"]
 ```
 
 ## 3-Fish pre-screen
