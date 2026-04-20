@@ -2128,12 +2128,12 @@ each compensating for a different defect of the prior stage. The design follows
 <p>Post-hoc calibration fixes both at decision time without retraining the model.</p>
 <h2 id="pipeline">Pipeline<a class="headerlink" href="#pipeline" title="Permanent link">&para;</a></h2>
 <pre class="mermaid"><code>flowchart LR
-    R[raw LLM prob p_llm] --&gt; I[isotonic&lt;br/&gt;per category]
-    I --&gt; V[Venn-Abers&lt;br/&gt;p_lo, p_mid, p_hi]
-    V --&gt; C{Mondrian conformal&lt;br/&gt;singleton at alpha=0.10?}
-    C --&gt;|set = 0,1| S[SKIP]
-    C --&gt;|singleton| E[shrinkage ensemble&lt;br/&gt;alpha * p_iso + 1-alpha * p_market]
-    E --&gt; F[p_final]</code></pre>
+    R["raw LLM prob p_llm"] --&gt; I["isotonic&lt;br/&gt;per category"]
+    I --&gt; V["Venn-Abers&lt;br/&gt;p_lo, p_mid, p_hi"]
+    V --&gt; C{"Mondrian conformal&lt;br/&gt;singleton at alpha=0.10?"}
+    C --&gt;|"set = {0,1}"| S["SKIP"]
+    C --&gt;|"singleton"| E["shrinkage ensemble&lt;br/&gt;alpha * p_iso + (1 − alpha) * p_market"]
+    E --&gt; F["p_final"]</code></pre>
 <h2 id="isotonic-regression">Isotonic regression<a class="headerlink" href="#isotonic-regression" title="Permanent link">&para;</a></h2>
 <p>Fits a monotone non-decreasing function <span class="arithmatex">\(g: [0, 1] \to [0, 1]\)</span> by minimizing
 squared error under an order constraint, solved with the Pool Adjacent
@@ -2319,7 +2319,7 @@ per-category guard keep the signal-to-noise sane.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 19, 2026 23:52:02 UTC">2026-04-19</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 20, 2026 00:05:15 UTC">2026-04-20</span>
   </span>
 
     
